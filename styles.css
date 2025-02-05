@@ -780,7 +780,7 @@ body {
 }
 
 .stat-card {
-  flex: 0 0 200px;
+  flex: 0 0 180px;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   border-radius: 1.5rem;
@@ -820,7 +820,7 @@ body {
 }
 
 .stat-icon {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   margin-bottom: 1.5rem;
   position: absolute;
   z-index: 1;
@@ -840,7 +840,7 @@ body {
 }
 
 .stat-number {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 800;
   background: linear-gradient(135deg, #1e2738 0%, #2a3a5f 100%);
   -webkit-background-clip: text;
@@ -859,10 +859,9 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-weight: 600;
-  text-align: end;
   z-index: 1;
   transition: color 0.3s ease;
-  margin-right: 0.2rem;
+  margin-top: 8rem;
 }
 
 .stat-card:hover .stat-label {
