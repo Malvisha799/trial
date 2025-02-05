@@ -764,6 +764,7 @@ body {
   max-width: 100%;
   margin: 0 auto;
   display: flex;
+  height: 200px;
   gap: 2rem;
   overflow-x: hidden;
   scroll-behavior: smooth;
