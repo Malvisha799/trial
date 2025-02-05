@@ -39,17 +39,18 @@ document.querySelectorAll(".tabNameWrapperStyle").forEach((tab) => {
     }
   });
 });
-
-document.querySelectorAll('.dropDownContainer').forEach((dropDownContainer, index) => {
-  const menuItems = dropDownContainer.querySelectorAll('.menuItem');
-  menuItems.forEach((menuItem) => {
-    const infoType = menuItem.getAttribute('data-info');
-    menuItem.addEventListener('mouseover', () => {
-      displayInfo(infoType, index);
-    })
-  })
-});
-
+// Set up event listener for menu items in dropdowns
+document
+  .querySelectorAll(".dropDownContainer")
+  .forEach((dropDownContainer, index) => {
+    const menuItems = dropDownContainer.querySelectorAll(".menuItem");
+    menuItems.forEach((menuItem) => {
+      const infoType = menuItem.getAttribute("data-info");
+      menuItem.addEventListener("mouseover", () => {
+        displayInfo(infoType, index);
+      });
+    });
+  });
 // Centralized content for all menu items
 const rightSideContent = {
   businessRegistration: {
@@ -159,7 +160,7 @@ const rightSideContent = {
       "Labor Law Advisor",
     ],
   },
-  accountingAndTax: {
+  accountingandtax: {
     title: "Accounting & Tax",
     items: [
       "Accounting and Book-keeping",
@@ -220,9 +221,138 @@ const rightSideContent = {
       "Trademark Infringement",
     ],
   },
-  designRegistration: {
+  designregistration: {
     title: "Design Registration",
     items: ["Logo Design", "Design Registration"],
+  },
+  businesscontracts: {
+    title: "Business Contracts",
+    items: [
+      "Non Disclosure Agreement NDA",
+      "Service Level Agreement",
+      "Franchise Agreement",
+      "Master Service Agreement",
+      "Shareholders Agreement",
+      "Joint Venture Agreement",
+      "Founders Agreement",
+      "Vendor Agreement",
+      "Consultancy Agreement",
+      "Memorandum of Understanding",
+      "Succession Certificate",
+      "Scope of Work Agreement",
+      "Share Purchase Agreement",
+      "Relinquishment Deed",
+      "Legal Heir Certificate",
+      "Trade Licence",
+      "Noncompete Agreement",
+      "Finance Agreement",
+      "GDPR",
+    ],
+  },
+  personalandfamily: {
+    title: "Personal & Family",
+    items: ["Will Registration", "Probate of Will", "Power of Attorney"],
+  },
+  realestate: {
+    title: "Real Estate",
+    items: [
+      "Rental Agreement",
+      "Sale Deed",
+      "Gift Deed",
+      "Rental Tenant Notice",
+    ],
+  },
+  notices: {
+    title: "Notices",
+    items: [
+      "Legal Notice",
+      "Legal Notice for Money Recovery",
+      "Legal Notice for recovery of dues",
+      "Cheque Bounce Notice",
+      "Legal Notice Under Consumer Protection Act",
+    ],
+  },
+  hrpolicies: {
+    title: "HR Policies",
+    items: ["Employment Agreement", "ESOP", "Payroll Maintenance"],
+  },
+  fundraising: {
+    title: "Fundraising",
+    items: ["Fundraising", "Pitch-Deck", "Business Loan", "DPR Service"],
+  },
+  patent: {
+    title: "Patent",
+    items: [
+      "Indian Patent Search",
+      "Provisional Patent Application",
+      "Patent Registration",
+    ],
+  },
+  ngo: {
+    title: "NGO",
+    items: [
+      "NGO",
+      "Section 8 Company",
+      "Trust Registration",
+      "Society Registration",
+      "NGO Compliances",
+      "NGO Compliance",
+      "Section 8 Compliance",
+      "CSR-1 Filing",
+      "Sec.80G & Sec. 12A",
+      "Darpan Registration",
+      "FCRA Registration",
+    ],
+  },
+  propertyandpersonal: {
+    title: "Property & Personal",
+    items: [
+      "Property Title Verification",
+      "Property Registration",
+      "Rera Complaint",
+      "Licenses & Registration",
+      "Gun License",
+      "Name Change & Other Conditions",
+      "Name Change",
+      "Religion Change",
+      "Gender Change",
+      "File an e-FIR",
+      "Online Police Complaint",
+      "Marriage",
+      "Marriage Registration",
+      "Court Marriage",
+      "Mutual Divorce",
+      "Divorce Alimony",
+      "Restitution of Conjugal Rights",
+      "Immigration",
+      "Corporate immigration",
+      "Family immigration",
+      "College immigration",
+      "File a Consumer Complaint",
+      "Online Consumer Complaint",
+      "E-Commerce Consumer Complaint",
+      "Insurance Consumer Complaint",
+    ],
+  },
+  lawyersandexperts: {
+    title: "Lawyers & Experts",
+    items: [
+      "Labour Law Advisor",
+      "Criminal Lawyer",
+      "Labour Lawyer",
+      "Consumer Court Lawyer",
+      "Divorce Lawyer",
+      "Banking Lawyer",
+      "Immigration Lawyer",
+      "Family Lawyer",
+      "Litigation Lawyer",
+      "Intellectual Property Lawyer",
+      "Trademark Lawyer",
+      "Reply to ITR Notice",
+      "Expert Services",
+      "Technolgy, Media and, Telecom (TMT)",
+      "Risk Management and Regulatory Risk",
+    ],
   },
 };
 
@@ -235,14 +365,232 @@ function displayInfo(infoType, index) {
     return;
   }
   const content = rightSideContent[infoType];
-
+  console.log("Content for Info Type:", content);
   if (content) {
+    const boldItems = [
+      "NGO Compliance",
+      "Licenses & Registration",
+      "Name Change & Other Conditions",
+      "File an e-FIR",
+      "Marriage",
+      "Immigration",
+      "File a Consumer Complaint",
+      "Expert Services",
+    ];
     sectionTitle.textContent = content.title;
     sectionList.innerHTML = content.items
-      .map((item) => `<li>${item}</li>`)
+      .map((item) => {
+        // Check for "NGO Compliance" and add custom styles
+        if (boldItems.includes(item)) {
+          return `<li style="font-weight: bold; margin-top: 15px; font-size: 15px; text-dark">${item}</li>`;
+        }
+        return `<li>${item}</li>`;
+      })
       .join("");
   } else {
     sectionTitle.textContent = "Not Found";
     sectionList.innerHTML = "<li>No items to display</li>";
   }
 }
+
+//Message Box Scroll
+
+// Add smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute("href")).scrollIntoView({
+      behavior: "smooth",
+    });
+  });
+});
+
+// Handle button clicks
+document.querySelector(".explore-btn").addEventListener("click", () => {
+  console.log("Explore All clicked");
+  // Add your explore functionality here
+});
+
+document.querySelector(".launch-btn").addEventListener("click", () => {
+  console.log("Launch Now clicked");
+  // Add your launch functionality here
+});
+
+document.querySelector(".continue-btn").addEventListener("click", () => {
+  console.log("Continue With Company clicked");
+  // Add your continue functionality here
+});
+
+// Handle service card clicks
+document.querySelectorAll(".service-card").forEach((card) => {
+  card.addEventListener("click", () => {
+    const service = card.classList.contains("company")
+      ? "Company"
+      : "Individual";
+    console.log(`${service} Services clicked`);
+    // Add your service selection functionality here
+  });
+});
+
+// Handle navigation dropdown clicks
+document.querySelectorAll(".nav-link").forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    console.log("Navigation item clicked:", link.textContent.trim());
+    // Add your navigation functionality here
+  });
+});
+
+// Counter Animation for Statistics
+const statsSection = document.querySelector(".stats-section");
+const numbers = document.querySelectorAll(".stat-number");
+let hasAnimated = false;
+
+// Enhanced counter animation
+function animateCounter(element, target) {
+  let current = 0;
+  const duration = 2500;
+  const steps = duration / 16;
+  const increment = target / steps;
+  let step = 0;
+
+  const easeOutQuart = (t) => 1 - --t * t * t * t;
+
+  const timer = setInterval(() => {
+    step++;
+    const progress = easeOutQuart(step / steps);
+    current = Math.min(target * progress, target);
+
+    if (target >= 1000) {
+      element.textContent = Math.floor(current).toLocaleString() + "+";
+    } else {
+      element.textContent = Math.floor(current) + "+";
+    }
+
+    if (step >= steps) {
+      clearInterval(timer);
+    }
+  }, duration / steps);
+}
+
+// Add parallax effect to stats cards
+const cards = document.querySelectorAll(".stat-card");
+cards.forEach((card) => {
+  card.addEventListener("mousemove", (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateX = (y - centerY) / 20;
+    const rotateY = (centerX - x) / 20;
+
+    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+  });
+
+  card.addEventListener("mouseleave", () => {
+    card.style.transform =
+      "perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)";
+  });
+});
+
+// Intersection Observer for triggering animation
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && !hasAnimated) {
+        hasAnimated = true;
+        numbers.forEach((number) => {
+          const target = parseInt(number.getAttribute("data-target"));
+          animateCounter(number, target);
+        });
+      }
+    });
+  },
+  { threshold: 0.5 }
+);
+
+// Start observing the stats section
+observer.observe(statsSection);
+
+// Statistics Section Scroll
+const statsContainer = document.querySelector(".stats-container");
+const scrollLeftBtn = document.querySelector(".scroll-btn.left");
+const scrollRightBtn = document.querySelector(".scroll-btn.right");
+const cardWidth = 300; // Width of card + gap
+let autoScrollInterval;
+
+// Manual scroll with buttons
+scrollLeftBtn.addEventListener("click", () => {
+  statsContainer.scrollBy({
+    left: -cardWidth,
+    behavior: "smooth",
+  });
+});
+
+scrollRightBtn.addEventListener("click", () => {
+  statsContainer.scrollBy({
+    left: cardWidth,
+    behavior: "smooth",
+  });
+});
+
+// Auto scroll function
+function startAutoScroll() {
+  autoScrollInterval = setInterval(() => {
+    if (
+      statsContainer.scrollLeft + statsContainer.clientWidth >=
+      statsContainer.scrollWidth
+    ) {
+      // If reached the end, scroll back to start
+      statsContainer.scrollTo({
+        left: 0,
+        behavior: "smooth",
+      });
+    } else {
+      statsContainer.scrollBy({
+        left: cardWidth,
+        behavior: "smooth",
+      });
+    }
+  }, 5000); // Auto scroll every 5 seconds
+}
+
+// Stop auto scroll on user interaction
+function stopAutoScroll() {
+  clearInterval(autoScrollInterval);
+}
+
+// Restart auto scroll after user interaction
+function restartAutoScroll() {
+  stopAutoScroll();
+  startAutoScroll();
+}
+
+// Event listeners for user interaction
+statsContainer.addEventListener("mouseenter", stopAutoScroll);
+statsContainer.addEventListener("mouseleave", startAutoScroll);
+scrollLeftBtn.addEventListener("click", restartAutoScroll);
+scrollRightBtn.addEventListener("click", restartAutoScroll);
+
+// Start auto scroll when the page loads
+startAutoScroll();
+
+// Add hover effect to feature cards
+document.querySelectorAll(".feature-card").forEach((card) => {
+  card.addEventListener("mouseenter", () => {
+    card.style.transform = "translateY(-2px)";
+  });
+
+  card.addEventListener("mouseleave", () => {
+    card.style.transform = "translateY(0)";
+  });
+});
+
+// Play button click handler
+document.querySelector(".play-button").addEventListener("click", () => {
+  // Add your video play functionality here
+  console.log("Play video clicked");
+});
