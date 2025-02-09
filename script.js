@@ -393,6 +393,60 @@ function displayInfo(infoType, index) {
   }
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburger = document.querySelector(".hamburger");
+  const mobileMenu = document.querySelector(".mobile-menu");
+  const mobileDropbtns = document.querySelectorAll(".mobile-dropbtn");
+  const toggleBtn = document.querySelector(".toggle-btn");
+  const toggleContainer = document.querySelector(".toggle-container");
+
+  // Toggle mobile menu
+  hamburger.addEventListener("click", function () {
+    mobileMenu.classList.toggle("active");
+  });
+
+  // Handle mobile dropdown menus
+  mobileDropbtns.forEach((btn) => {
+    btn.addEventListener("clic.nek", function () {
+      const dropdownContent = thisxtElementSibling;
+
+      // Close all other dropdowns
+      document
+        .querySelectorAll(".mobile-dropdown-content")
+        .forEach((content) => {
+          if (content !== dropdownContent) {
+            content.classList.remove("active");
+          }
+        });
+
+      // Toggle current dropdown
+      dropdownContent.classList.toggle("active");
+    });
+  });
+
+  // Toggle button dropdown
+  toggleBtn.addEventListener("click", function (e) {
+    e.stopPropagation();
+    toggleContainer.classList.toggle("active");
+  });
+
+  // Close mobile menu and toggle dropdown when clicking outside
+  document.addEventListener("click", function (event) {
+    if (!event.target.closest(".navbar")) {
+      mobileMenu.classList.remove("active");
+      document
+        .querySelectorAll(".mobile-dropdown-content")
+        .forEach((content) => {
+          content.classList.remove("active");
+        });
+    }
+
+    if (!event.target.closest(".toggle-container")) {
+      toggleContainer.classList.remove("active");
+    }
+  });
+});
+
 //Message Box Scroll
 
 // Add smooth scrolling for anchor links
@@ -416,30 +470,76 @@ document.querySelector(".launch-btn").addEventListener("click", () => {
   // Add your launch functionality here
 });
 
-document.querySelector(".continue-btn").addEventListener("click", () => {
-  console.log("Continue With Company clicked");
-  // Add your continue functionality here
-});
+// document.querySelector(".continue-btn").addEventListener("click", () => {
+//   console.log("Continue With Company clicked");
+//   // Add your continue functionality here
+// });
 
 // Handle service card clicks
-document.querySelectorAll(".service-card").forEach((card) => {
-  card.addEventListener("click", () => {
-    const service = card.classList.contains("company")
-      ? "Company"
-      : "Individual";
-    console.log(`${service} Services clicked`);
-    // Add your service selection functionality here
+document.addEventListener("DOMContentLoaded", function () {
+  // Toggle switch functionality
+  const toggleSwitch = document.querySelector(".switch input");
+  const companyCard = document.querySelector(".service-card.company");
+  const individualCard = document.querySelector(".service-card.individual");
+  const companyServices = document.querySelector(".company-services");
+  const individualServices = document.querySelector(".individual-services");
+
+  toggleSwitch.addEventListener("change", function () {
+    if (this.checked) {
+      companyCard.style.opacity = "0.5";
+      individualCard.style.opacity = "1";
+      companyServices.classList.remove("active");
+      individualServices.classList.add("active");
+    } else {
+      companyCard.style.opacity = "1";
+      individualCard.style.opacity = "0.5";
+      companyServices.classList.add("active");
+      individualServices.classList.remove("active");
+    }
+  });
+
+  // Initialize cards opacity
+  companyCard.style.opacity = "1";
+  individualCard.style.opacity = "0.5";
+
+  // Service buttons hover effect
+  const serviceButtons = document.querySelectorAll(".service-btn");
+  serviceButtons.forEach((button) => {
+    button.addEventListener("mouseover", function () {
+      this.style.transform = "scale(1.05)";
+    });
+    button.addEventListener("mouseout", function () {
+      this.style.transform = "scale(1)";
+    });
+  });
+
+  // Launch button click animation
+  const launchBtn = document.querySelector(".launch-btn");
+  launchBtn.addEventListener("click", function () {
+    this.style.transform = "scale(0.95)";
+    setTimeout(() => {
+      this.style.transform = "scale(1)";
+    }, 200);
   });
 });
 
+// Close dropdown when clicking outside
+// document.addEventListener("click", (event) => {
+//   document.querySelectorAll(".service-details").forEach((dropdown) => {
+//     if (!dropdown.closest(".service-card").contains(event.target)) {
+//       dropdown.style.display = "none";
+//     }
+//   });
+// });
+
 // Handle navigation dropdown clicks
-document.querySelectorAll(".nav-link").forEach((link) => {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
-    console.log("Navigation item clicked:", link.textContent.trim());
-    // Add your navigation functionality here
-  });
-});
+// document.querySelectorAll(".nav-link").forEach((link) => {
+//   link.addEventListener("click", (e) => {
+//     e.preventDefault();
+//     console.log("Navigation item clicked:", link.textContent.trim());
+//     // Add your navigation functionality here
+//   });
+// });
 
 // Counter Animation for Statistics
 const statsSection = document.querySelector(".stats-section");
