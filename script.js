@@ -523,24 +523,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// Close dropdown when clicking outside
-// document.addEventListener("click", (event) => {
-//   document.querySelectorAll(".service-details").forEach((dropdown) => {
-//     if (!dropdown.closest(".service-card").contains(event.target)) {
-//       dropdown.style.display = "none";
-//     }
-//   });
-// });
-
-// Handle navigation dropdown clicks
-// document.querySelectorAll(".nav-link").forEach((link) => {
-//   link.addEventListener("click", (e) => {
-//     e.preventDefault();
-//     console.log("Navigation item clicked:", link.textContent.trim());
-//     // Add your navigation functionality here
-//   });
-// });
-
 // Counter Animation for Statistics
 const statsSection = document.querySelector(".stats-section");
 const numbers = document.querySelectorAll(".stat-number");
@@ -678,6 +660,143 @@ scrollRightBtn.addEventListener("click", restartAutoScroll);
 // Start auto scroll when the page loads
 startAutoScroll();
 
+//Container2//
+document.addEventListener("DOMContentLoaded", function () {
+  // Initialize Lucide icons
+  lucide.createIcons();
+
+  // Auto-scroll for logos (Left & Right)
+  const logosScroll = document.querySelector(".logos-scroll");
+  let scrollPosition = 0;
+  let scrollDirection = -1; // 1 = Right, -1 = Left
+  const scrollSpeed = 0.5;
+  let isHovered = false;
+  let lastTimestamp = 0;
+
+  logosScroll.addEventListener("mouseenter", () => {
+    isHovered = true;
+  });
+
+  logosScroll.addEventListener("mouseleave", () => {
+    isHovered = false;
+  });
+
+  function smoothScroll(timestamp) {
+    if (!lastTimestamp) lastTimestamp = timestamp;
+    const delta = timestamp - lastTimestamp;
+
+    if (!isHovered) {
+      scrollPosition += scrollSpeed * (delta / 16) * scrollDirection;
+
+      // Reverse direction at edges
+      if (scrollPosition >= logosScroll.scrollWidth - logosScroll.clientWidth) {
+        scrollDirection = -1; // Move Left
+      } else if (scrollPosition <= 0) {
+        scrollDirection = 1; // Move Right
+      }
+
+      logosScroll.scrollLeft = scrollPosition;
+    }
+
+    lastTimestamp = timestamp;
+    requestAnimationFrame(smoothScroll);
+  }
+
+  requestAnimationFrame(smoothScroll);
+
+  // Smooth scroll for services with momentum
+  const servicesContainer = document.querySelector(".services-container1");
+  let isScrolling = false;
+  let startX;
+  let scrollLeft;
+  let velocity = 0;
+  let momentumID;
+
+  function applyMomentum() {
+    if (Math.abs(velocity) > 0.1) {
+      servicesContainer.scrollLeft += velocity;
+      velocity *= 0.95; // Friction
+      momentumID = requestAnimationFrame(applyMomentum);
+    }
+  }
+
+  servicesContainer.addEventListener("mousedown", (e) => {
+    isScrolling = true;
+    startX = e.pageX - servicesContainer.offsetLeft;
+    scrollLeft = servicesContainer.scrollLeft;
+    cancelAnimationFrame(momentumID);
+
+    // Store the last few positions for velocity calculation
+    const positions = [];
+    let lastTime = Date.now();
+
+    function trackMovement(e) {
+      if (isScrolling) {
+        const now = Date.now();
+        positions.push({
+          x: e.pageX,
+          time: now,
+        });
+
+        // Keep only the last 5 positions
+        if (positions.length > 5) positions.shift();
+
+        const x = e.pageX - servicesContainer.offsetLeft;
+        const walk = (x - startX) * 2;
+        servicesContainer.scrollLeft = scrollLeft - walk;
+      }
+    }
+
+    function stopScrolling() {
+      if (positions.length > 1) {
+        const last = positions[positions.length - 1];
+        const first = positions[0];
+        const deltaX = last.x - first.x;
+        const deltaTime = last.time - first.time;
+        velocity = (deltaX / deltaTime) * 16; // Convert to pixels per frame
+        applyMomentum();
+      }
+      isScrolling = false;
+      positions.length = 0;
+    }
+
+    document.addEventListener("mousemove", trackMovement);
+    document.addEventListener("mouseup", function cleanup() {
+      document.removeEventListener("mousemove", trackMovement);
+      document.removeEventListener("mouseup", cleanup);
+      stopScrolling();
+    });
+  });
+
+  // Parallax effect for service cards
+  const cards = document.querySelectorAll(".service-card1");
+
+  cards.forEach((card) => {
+    card.addEventListener("mousemove", (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      const rotateX = (y - centerY) / 20;
+      const rotateY = (centerX - x) / 20;
+
+      card.style.transform = `
+            perspective(1000px)
+            rotateX(${rotateX}deg)
+            rotateY(${rotateY}deg)
+            translateY(-5px)
+        `;
+    });
+
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "";
+    });
+  });
+});
+
 // Add hover effect to feature cards
 document.querySelectorAll(".feature-card").forEach((card) => {
   card.addEventListener("mouseenter", () => {
@@ -694,3 +813,577 @@ document.querySelector(".play-button").addEventListener("click", () => {
   // Add your video play functionality here
   console.log("Play video clicked");
 });
+
+// Youtube Video Section
+document.addEventListener("DOMContentLoaded", () => {
+  const carousel = document.getElementById("videoCarousel");
+  // const prevButton = document.getElementById("prevButton");
+  // const nextButton = document.getElementById("nextButton");
+  const cards = Array.from(carousel.children);
+  let currentIndex = 2; // Start with middle card
+  let autoScrollInterval;
+
+  function updateCarousel() {
+    // Handle infinite scroll by adjusting the index
+    if (currentIndex < 0) {
+      currentIndex = cards.length - 1;
+    } else if (currentIndex >= cards.length) {
+      currentIndex = 0;
+    }
+
+    cards.forEach((card, index) => {
+      card.style.transition = "all 0.5s ease";
+
+      // Calculate relative position considering the circular nature
+      let relativeIndex = index - currentIndex;
+      if (relativeIndex < -2) relativeIndex += cards.length;
+      if (relativeIndex > 2) relativeIndex -= cards.length;
+
+      if (relativeIndex === 0) {
+        card.style.transform = "translateX(0) scale(1)";
+        card.style.opacity = "1";
+        card.style.zIndex = "3";
+      } else if (relativeIndex === -1 || relativeIndex === cards.length - 1) {
+        card.style.transform = "translateX(-70%) scale(0.9)";
+        card.style.opacity = "0.7";
+        card.style.zIndex = "2";
+      } else if (relativeIndex === -2 || relativeIndex === cards.length - 2) {
+        card.style.transform = "translateX(-140%) scale(0.8)";
+        card.style.opacity = "0.7";
+        card.style.zIndex = "1";
+      } else if (relativeIndex === 1) {
+        card.style.transform = "translateX(70%) scale(0.9)";
+        card.style.opacity = "0.7";
+        card.style.zIndex = "2";
+      } else if (relativeIndex === 2) {
+        card.style.transform = "translateX(140%) scale(0.8)";
+        card.style.opacity = "0.7";
+        card.style.zIndex = "1";
+      } else {
+        card.style.transform = "translateX(200%) scale(0.7)";
+        card.style.opacity = "0";
+        card.style.zIndex = "0";
+      }
+    });
+  }
+
+  function startAutoScroll() {
+    stopAutoScroll(); // Clear any existing interval
+    autoScrollInterval = setInterval(() => {
+      currentIndex++;
+      updateCarousel();
+    }, 2000); // Auto scroll every 2 seconds
+  }
+
+  function stopAutoScroll() {
+    if (autoScrollInterval) {
+      clearInterval(autoScrollInterval);
+    }
+  }
+
+  // prevButton.addEventListener("click", () => {
+  //   currentIndex--;
+  //   updateCarousel();
+  //   // Restart auto-scroll after manual navigation
+  //   startAutoScroll();
+  // });
+
+  // nextButton.addEventListener("click", () => {
+  //   currentIndex++;
+  //   updateCarousel();
+  //   // Restart auto-scroll after manual navigation
+  //   startAutoScroll();
+  // });
+
+  // Pause auto-scroll when hovering over the carousel
+  carousel.addEventListener("mouseenter", stopAutoScroll);
+  carousel.addEventListener("mouseleave", startAutoScroll);
+
+  // Initial setup
+  updateCarousel();
+  startAutoScroll();
+});
+
+//Testimonial Section
+document.addEventListener("DOMContentLoaded", function () {
+  const container = document.querySelector(".testimonials-container");
+  let scrollPosition = 0;
+  const scrollSpeed = 1;
+  let isHovered = false;
+  let lastTimestamp = 0;
+  let animationFrameId;
+
+  // Clone the testimonial cards for infinite scroll
+  const cards = document.querySelectorAll(".testimonial-card");
+  cards.forEach((card) => {
+    const clone = card.cloneNode(true);
+    container.appendChild(clone);
+  });
+
+  container.addEventListener("mouseenter", () => {
+    isHovered = true;
+    cancelAnimationFrame(animationFrameId);
+  });
+
+  container.addEventListener("mouseleave", () => {
+    isHovered = false;
+    lastTimestamp = 0;
+    animationFrameId = requestAnimationFrame(smoothScroll);
+  });
+
+  function smoothScroll(timestamp) {
+    if (!lastTimestamp) lastTimestamp = timestamp;
+    const delta = timestamp - lastTimestamp;
+
+    if (!isHovered) {
+      scrollPosition += scrollSpeed * (delta / 16);
+
+      // Reset scroll position when reaching the end
+      if (scrollPosition >= container.scrollWidth / 2) {
+        scrollPosition = 0;
+      }
+
+      container.scrollLeft = scrollPosition;
+    }
+
+    lastTimestamp = timestamp;
+    animationFrameId = requestAnimationFrame(smoothScroll);
+  }
+
+  // Start the animation
+  animationFrameId = requestAnimationFrame(smoothScroll);
+
+  // Touch and mouse drag scrolling
+  let isScrolling = false;
+  let startX;
+  let scrollLeft;
+
+  container.addEventListener("mousedown", (e) => {
+    isScrolling = true;
+    startX = e.pageX - container.offsetLeft;
+    scrollLeft = container.scrollLeft;
+    cancelAnimationFrame(animationFrameId);
+  });
+
+  container.addEventListener("mousemove", (e) => {
+    if (!isScrolling) return;
+    e.preventDefault();
+    const x = e.pageX - container.offsetLeft;
+    const walk = (x - startX) * 2;
+    container.scrollLeft = scrollLeft - walk;
+  });
+
+  container.addEventListener("mouseup", () => {
+    isScrolling = false;
+    lastTimestamp = 0;
+    animationFrameId = requestAnimationFrame(smoothScroll);
+  });
+
+  container.addEventListener("mouseleave", () => {
+    isScrolling = false;
+  });
+
+  // Touch events
+  container.addEventListener("touchstart", (e) => {
+    isScrolling = true;
+    startX = e.touches[0].pageX - container.offsetLeft;
+    scrollLeft = container.scrollLeft;
+    cancelAnimationFrame(animationFrameId);
+  });
+
+  container.addEventListener("touchmove", (e) => {
+    if (!isScrolling) return;
+    const x = e.touches[0].pageX - container.offsetLeft;
+    const walk = (x - startX) * 2;
+    container.scrollLeft = scrollLeft - walk;
+  });
+
+  container.addEventListener("touchend", () => {
+    isScrolling = false;
+    lastTimestamp = 0;
+    animationFrameId = requestAnimationFrame(smoothScroll);
+  });
+});
+
+// PLANS FUNCTIONALITY SECTION
+// Modal functionality
+document.addEventListener("DOMContentLoaded", () => {
+  const plansModal = document.getElementById("plansModal");
+  const demoModal = document.getElementById("demoModal");
+  const explorePlansBtn = document.querySelector(".explore-plans");
+  const requestDemoBtn = document.querySelector(".request-demo");
+  const closeBtns = document.querySelectorAll(".close");
+
+  explorePlansBtn.addEventListener("click", () => {
+    plansModal.style.display = "block";
+  });
+
+  requestDemoBtn.addEventListener("click", () => {
+    demoModal.style.display = "block";
+  });
+
+  closeBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      plansModal.style.display = "none";
+      demoModal.style.display = "none";
+    });
+  });
+
+  window.addEventListener("click", (e) => {
+    if (e.target === plansModal) {
+      plansModal.style.display = "none";
+    }
+    if (e.target === demoModal) {
+      demoModal.style.display = "none";
+    }
+  });
+
+  // Demo form submission
+  const demoForm = document.getElementById("demoForm");
+  demoForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const formData = {
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      phone: document.getElementById("phone").value,
+      message: document.getElementById("message").value,
+    };
+
+    console.log("Form submitted:", formData);
+    alert("Thank you for your interest! We will contact you soon.");
+    demoModal.style.display = "none";
+    demoForm.reset();
+  });
+
+  // Tabs functionality with dynamic content
+  const tabBtns = document.querySelectorAll(".tab-btn");
+  const contentArea = document.querySelector(".services1-grid");
+
+  const tabContents = {
+    resumes: {
+      title: "Other Services Than Offered By India Certify",
+      tags: [
+        "GeM Registration",
+        "Food Registration",
+        "Udyam Registration",
+        "ISO Registration",
+        "PF Registration",
+        "Barcode Registration",
+        "Darpan Registration",
+        "ZED Certification",
+        "DSC Registration",
+        "GST Registration",
+        "Gumasta Registration",
+        "ESI Registration",
+        "RCMC Registration",
+        "APEDA Registration",
+        "BIS Registration",
+        "FCRA Registration",
+        "DDT DSP ISP LICENSE",
+        "Startup India Registration",
+        "12A And 80G Registration",
+        "Only 80G Registration",
+      ],
+    },
+    "cover-letters": {
+      title: "Professional Cover Letter Templates",
+      tags: [
+        "Entry Level Cover Letter",
+        "Professional Cover Letter",
+        "Creative Cover Letter",
+        "Career Change Cover Letter",
+        "Internal Position Cover Letter",
+        "Academic Cover Letter",
+        "Executive Cover Letter",
+        "Modern Cover Letter",
+        "Federal Cover Letter",
+        "Internship Cover Letter",
+        "Teaching Cover Letter",
+        "Nursing Cover Letter",
+        "IT Cover Letter",
+        "Sales Cover Letter",
+        "Engineering Cover Letter",
+        "Legal Cover Letter",
+      ],
+    },
+    "cv-samples": {
+      title: "CV Samples By Industry",
+      tags: [
+        "Academic CV",
+        "Research CV",
+        "Medical CV",
+        "Scientific CV",
+        "Professor CV",
+        "Graduate CV",
+        "International CV",
+        "Postdoctoral CV",
+        "Fellowship CV",
+        "PhD CV",
+        "Lecturer CV",
+        "Researcher CV",
+        "Scholarship CV",
+        "Student CV",
+        "Technical CV",
+        "Industry CV",
+        "Professional CV",
+        "Executive CV",
+      ],
+    },
+  };
+
+  function updateContent(tabName) {
+    const content = tabContents[tabName];
+    contentArea.innerHTML = `
+    <h3>${content.title}</h3>
+    <div class="service-tags">
+      ${content.tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}
+    </div>
+  `;
+
+    // Reattach click handlers to new tags
+    document.querySelectorAll(".tag").forEach((tag) => {
+      tag.addEventListener("click", () => {
+        console.log(`Selected: ${tag.textContent}`);
+      });
+    });
+  }
+
+  tabBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      // Remove active class from all buttons
+      tabBtns.forEach((b) => b.classList.remove("active"));
+      // Add active class to clicked button
+      btn.classList.add("active");
+
+      // Update content based on selected tab
+      const tabName = btn.dataset.tab;
+      updateContent(tabName);
+    });
+  });
+});
+
+// footer
+// Set current year in footer
+document.getElementById("current-year").textContent = new Date().getFullYear();
+
+// Newsletter form submission
+document
+  .getElementById("newsletter-form")
+  .addEventListener("submit", function (e) {
+    e.preventDefault();
+    const email = this.querySelector('input[type="email"]').value;
+    console.log("Subscribed:", email);
+    this.reset();
+    alert("Thank you for subscribing!");
+  });
+
+
+  // FAQ Functionality
+  const faqQuestions = document.querySelectorAll('.faq-question');
+
+  faqQuestions.forEach(question => {
+      question.addEventListener('click', () => {
+          const answer = question.nextElementSibling;
+          const isActive = question.classList.contains('active');
+
+          // Close all other answers
+          faqQuestions.forEach(q => {
+              q.classList.remove('active');
+              q.nextElementSibling.classList.remove('active');
+          });
+
+          // Toggle current answer
+          if (!isActive) {
+              question.classList.add('active');
+              answer.classList.add('active');
+          }
+      });
+  });
+
+  // Email Form Submission
+  const emailForm = document.querySelector('.email-signup');
+  emailForm?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = emailForm.querySelector('input[type="email"]').value;
+      // Handle email submission
+      console.log('Email submitted:', email);
+      // Here you would typically send this to your backend
+      window.location.href = '/newsletter'; // Redirect to newsletter page
+  });
+
+  // Contact Form Submission
+  const contactForm = document.getElementById('contactForm');
+  contactForm?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const formData = new FormData(contactForm);
+      const data = Object.fromEntries(formData);
+      
+      // Handle form submission
+      console.log('Form submitted:', data);
+      // Here you would typically send this to your backend
+      window.location.href = '/newsletter'; // Redirect to newsletter page
+  });
+
+  // Dropdown functionality for business and revenue type
+  const typeSelect = document.querySelector('.type-select');
+  const businessTypeDropdown = document.querySelector('.business-type-dropdown');
+  const revenueTypeDropdown = document.querySelector('.revenue-type-dropdown');
+  const selectedBusinessType = document.querySelector('.selected-business-type');
+  const selectedRevenueType = document.querySelector('.selected-revenue-type');
+
+  // Toggle dropdowns
+  typeSelect?.addEventListener('click', (e) => {
+      const clickedElement = e.target;
+      const isBusinessType = clickedElement.closest('.selected-business-type');
+      const isRevenueType = clickedElement.closest('.selected-revenue-type');
+
+      if (isBusinessType) {
+          businessTypeDropdown?.classList.toggle('active');
+          revenueTypeDropdown?.classList.remove('active');
+      } else if (isRevenueType) {
+          revenueTypeDropdown?.classList.toggle('active');
+          businessTypeDropdown?.classList.remove('active');
+      }
+
+      typeSelect.classList.toggle('active');
+  });
+
+  // Handle business type selection
+  document.querySelectorAll('.business-type-dropdown .dropdown-item').forEach(item => {
+      item.addEventListener('click', () => {
+          const value = item.getAttribute('data-value');
+          if (selectedBusinessType && value) {
+              selectedBusinessType.textContent = value;
+              businessTypeDropdown?.classList.remove('active');
+              typeSelect?.classList.remove('active');
+          }
+      });
+  });
+
+  // Handle revenue type selection
+  document.querySelectorAll('.revenue-type-dropdown .dropdown-item').forEach(item => {
+      item.addEventListener('click', () => {
+          const value = item.getAttribute('data-value');
+          if (selectedRevenueType && value) {
+              selectedRevenueType.textContent = value;
+              revenueTypeDropdown?.classList.remove('active');
+              typeSelect?.classList.remove('active');
+          }
+      });
+  });
+
+  // Close dropdowns when clicking outside
+  document.addEventListener('click', (e) => {
+      const target = e.target;
+      if (!target.closest('.type-select-container')) {
+          businessTypeDropdown?.classList.remove('active');
+          revenueTypeDropdown?.classList.remove('active');
+          typeSelect?.classList.remove('active');
+      }
+});
+
+// DOM Elements
+const helpButton = document.getElementById('helpButton');
+const helpMenu = document.getElementById('helpMenu');
+const closeHelp = document.getElementById('closeHelp');
+const chatWidget = document.getElementById('chatWidget');
+const startChat = document.getElementById('startChat');
+const closeChat = document.getElementById('closeChat');
+const messageInput = document.getElementById('messageInput');
+const sendMessage = document.getElementById('sendMessage');
+const chatMessages = document.getElementById('chatMessages');
+const faqsModal = document.getElementById('faqsModal');
+const showFaqs = document.getElementById('showFaqs');
+const closeFaqs = document.getElementById('closeFaqs');
+const knowledgeModal = document.getElementById('knowledgeModal');
+const showKnowledge = document.getElementById('showKnowledge');
+const closeKnowledge = document.getElementById('closeKnowledge');
+
+// Help Menu Toggle
+helpButton.addEventListener('click', () => {
+    helpMenu.classList.toggle('active');
+    // Close other widgets if open
+    chatWidget.classList.remove('active');
+    faqsModal.classList.remove('active');
+    knowledgeModal.classList.remove('active');
+});
+
+closeHelp.addEventListener('click', () => {
+    helpMenu.classList.remove('active');
+});
+
+// Chat Widget
+startChat.addEventListener('click', () => {
+    chatWidget.classList.add('active');
+    helpMenu.classList.remove('active');
+});
+
+closeChat.addEventListener('click', () => {
+    chatWidget.classList.remove('active');
+});
+
+// Chat Functionality
+function addMessage(message, isUser = false) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `message ${isUser ? 'user' : 'support'}`;
+    messageDiv.innerHTML = `<p>${message}</p>`;
+    chatMessages.appendChild(messageDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+sendMessage.addEventListener('click', () => {
+    const message = messageInput.value.trim();
+    if (message) {
+        addMessage(message, true);
+        messageInput.value = '';
+        
+        // Simulate support response
+        setTimeout(() => {
+            addMessage("Thank you for your message. Our support team will respond shortly.");
+        }, 1000);
+    }
+});
+
+messageInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        sendMessage.click();
+    }
+});
+
+// FAQs Modal
+showFaqs.addEventListener('click', () => {
+    faqsModal.classList.add('active');
+    helpMenu.classList.remove('active');
+});
+
+closeFaqs.addEventListener('click', () => {
+    faqsModal.classList.remove('active');
+});
+
+// Knowledge Base Modal
+showKnowledge.addEventListener('click', () => {
+    knowledgeModal.classList.add('active');
+    helpMenu.classList.remove('active');
+});
+
+closeKnowledge.addEventListener('click', () => {
+    knowledgeModal.classList.remove('active');
+});
+
+// Close modals when clicking outside
+window.addEventListener('click', (e) => {
+    if (e.target === faqsModal) {
+        faqsModal.classList.remove('active');
+    }
+    if (e.target === knowledgeModal) {
+        knowledgeModal.classList.remove('active');
+    }
+});
+
+// Prevent closing when clicking inside modal content
+document.querySelectorAll('.modal-content').forEach(modal => {
+    modal.addEventListener('click', (e) => {
+        e.stopPropagation();
+    });
+});
+
