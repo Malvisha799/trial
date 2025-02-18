@@ -1393,96 +1393,90 @@ document.querySelectorAll(".modal-content").forEach((modal) => {
 });
 
 // Video data array with 10 videos
+// Video data array with 10 videos
 const videoData = [
   {
-    id: 1,
-    videoId: "dQw4w9WgXcQ",
-    thumbnail:
-      "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=300&h=533",
-    title: "From Startup to Success",
-    description: "How we helped a local business grow 10x",
+      id: 1,
+      videoId: 'dQw4w9WgXcQ',
+      thumbnail: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=300&h=533',
+      title: 'From Startup to Success',
+      description: 'How we helped a local business grow 10x'
   },
   {
-    id: 2,
-    videoId: "dQw4w9WgXcQ",
-    thumbnail:
-      "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=300&h=533",
-    title: "Digital Transformation",
-    description: "Revolutionizing traditional business",
+      id: 2,
+      videoId: 'dQw4w9WgXcQ',
+      thumbnail: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=300&h=533',
+      title: 'Digital Transformation',
+      description: 'Revolutionizing traditional business'
   },
   {
-    id: 3,
-    videoId: "dQw4w9WgXcQ",
-    thumbnail:
-      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=300&h=533",
-    title: "Global Expansion",
-    description: "Breaking into international markets",
+      id: 3,
+      videoId: 'dQw4w9WgXcQ',
+      thumbnail: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=300&h=533',
+      title: 'Global Expansion',
+      description: 'Breaking into international markets'
   },
   {
-    id: 4,
-    videoId: "dQw4w9WgXcQ",
-    thumbnail:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=300&h=533",
-    title: "Tech Innovation",
-    description: "Building the future of business",
+      id: 4,
+      videoId: 'dQw4w9WgXcQ',
+      thumbnail: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=300&h=533',
+      title: 'Tech Innovation',
+      description: 'Building the future of business'
   },
   {
-    id: 5,
-    videoId: "dQw4w9WgXcQ",
-    thumbnail:
-      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=300&h=533",
-    title: "AI Integration",
-    description: "Implementing smart solutions",
+      id: 5,
+      videoId: 'dQw4w9WgXcQ',
+      thumbnail: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=300&h=533',
+      title: 'AI Integration',
+      description: 'Implementing smart solutions'
   },
   {
-    id: 6,
-    videoId: "dQw4w9WgXcQ",
-    thumbnail:
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=300&h=533",
-    title: "Team Excellence",
-    description: "Building high-performance teams",
+      id: 6,
+      videoId: 'dQw4w9WgXcQ',
+      thumbnail: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=300&h=533',
+      title: 'Team Excellence',
+      description: 'Building high-performance teams'
   },
   {
-    id: 7,
-    videoId: "dQw4w9WgXcQ",
-    thumbnail:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=300&h=533",
-    title: "Market Analysis",
-    description: "Data-driven decision making",
+      id: 7,
+      videoId: 'dQw4w9WgXcQ',
+      thumbnail: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=300&h=533',
+      title: 'Market Analysis',
+      description: 'Data-driven decision making'
   },
   {
-    id: 8,
-    videoId: "dQw4w9WgXcQ",
-    thumbnail:
-      "https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?auto=format&fit=crop&q=80&w=300&h=533",
-    title: "Sustainable Growth",
-    description: "Eco-friendly business solutions",
+      id: 8,
+      videoId: 'dQw4w9WgXcQ',
+      thumbnail: 'https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?auto=format&fit=crop&q=80&w=300&h=533',
+      title: 'Sustainable Growth',
+      description: 'Eco-friendly business solutions'
   },
   {
-    id: 9,
-    videoId: "dQw4w9WgXcQ",
-    thumbnail:
-      "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=300&h=533",
-    title: "Cloud Solutions",
-    description: "Modern infrastructure setup",
+      id: 9,
+      videoId: 'dQw4w9WgXcQ',
+      thumbnail: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=300&h=533',
+      title: 'Cloud Solutions',
+      description: 'Modern infrastructure setup'
   },
   {
-    id: 10,
-    videoId: "dQw4w9WgXcQ",
-    thumbnail:
-      "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=300&h=533",
-    title: "Customer Success",
-    description: "Building lasting relationships",
-  },
+      id: 10,
+      videoId: 'dQw4w9WgXcQ',
+      thumbnail: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=300&h=533',
+      title: 'Customer Success',
+      description: 'Building lasting relationships'
+  }
 ];
 
-// Keep track of currently displayed videos
+// Keep track of currently displayed videos and their positions
 let activeVideos = videoData.slice(0, 4);
+let lastChangedPositions = new Set(); // Track recently changed positions
+let hoveredPositions = new Set(); // Track positions being hovered
 
 // Function to create a story card
-function createStoryCard(video) {
-  const card = document.createElement("div");
-  card.className = "story-card";
+function createStoryCard(video, position) {
+  const card = document.createElement('div');
+  card.className = 'story-card';
+  card.dataset.position = position;
   card.innerHTML = `
       <div class="video-container">
           <div class="thumbnail-overlay"></div>
@@ -1499,40 +1493,104 @@ function createStoryCard(video) {
       </div>
   `;
 
+  // Add hover events
+  card.addEventListener('mouseenter', () => {
+      hoveredPositions.add(position);
+  });
+  
+  card.addEventListener('mouseleave', () => {
+      hoveredPositions.delete(position);
+  });
+
   // Add click event listener
-  card.addEventListener("click", () => openVideoModal(video.videoId));
+  card.addEventListener('click', () => openVideoModal(video.videoId));
 
   // Add animation class after a short delay
-  setTimeout(() => card.classList.add("animate"), 100);
+  setTimeout(() => card.classList.add('animate'), 100);
 
   return card;
 }
 
 // Function to get random time between 3 and 7 seconds
 function getRandomTime() {
-  return Math.floor(Math.random() * (7000 - 3000) + 3000);
+  return Math.floor(Math.random() * (7000 - 5000) + 1000);
+}
+
+// Function to get a random position that hasn't been changed recently and isn't being hovered
+function getRandomPosition() {
+  let availablePositions = [];
+  for (let i = 0; i < 4; i++) {
+      // Only include positions that aren't being hovered and haven't been changed recently
+      if (!lastChangedPositions.has(i) && !hoveredPositions.has(i)) {
+          availablePositions.push(i);
+      }
+  }
+  
+  // If all positions were recently changed or are being hovered, only exclude hovered positions
+  if (availablePositions.length === 0) {
+      availablePositions = [];
+      for (let i = 0; i < 4; i++) {
+          if (!hoveredPositions.has(i)) {
+              availablePositions.push(i);
+          }
+      }
+  }
+  
+  // If all positions are being hovered, return null
+  if (availablePositions.length === 0) {
+      return null;
+  }
+  
+  const randomIndex = Math.floor(Math.random() * availablePositions.length);
+  const position = availablePositions[randomIndex];
+  
+  // Track this position as recently changed
+  lastChangedPositions.add(position);
+  
+  // If we've tracked too many positions, remove the oldest one
+  if (lastChangedPositions.size > 2) {
+      lastChangedPositions.delete([...lastChangedPositions][0]);
+  }
+  
+  return position;
 }
 
 // Function to rotate videos
 function rotateVideos() {
-  const storiesGrid = document.getElementById("storiesGrid");
-  const remainingVideos = videoData.filter(
-    (video) => !activeVideos.find((active) => active.id === video.id)
-  );
-
-  // Randomly select a video to replace
-  const indexToReplace = Math.floor(Math.random() * activeVideos.length);
-  const randomNewVideo =
-    remainingVideos[Math.floor(Math.random() * remainingVideos.length)];
-
-  // Update active videos array
-  activeVideos[indexToReplace] = randomNewVideo;
-
-  // Update DOM
-  storiesGrid.innerHTML = "";
-  activeVideos.forEach((video) => {
-    storiesGrid.appendChild(createStoryCard(video));
-  });
+  const storiesGrid = document.getElementById('storiesGrid');
+  
+  // Get a random position to change
+  const positionToChange = getRandomPosition();
+  
+  // If we found a valid position to change (not being hovered)
+  if (positionToChange !== null) {
+      // Get available videos (ones not currently displayed)
+      const remainingVideos = videoData.filter(video => 
+          !activeVideos.find(active => active.id === video.id)
+      );
+      
+      if (remainingVideos.length > 0) {
+          // Select a random new video
+          const randomNewVideo = remainingVideos[Math.floor(Math.random() * remainingVideos.length)];
+          
+          // Create the new card first
+          const newCard = createStoryCard(randomNewVideo, positionToChange);
+          
+          // Replace the old video in the activeVideos array
+          activeVideos[positionToChange] = randomNewVideo;
+          
+          // Get all current cards
+          const currentCards = storiesGrid.children;
+          
+          // Replace only the card at the selected position
+          if (currentCards[positionToChange]) {
+              currentCards[positionToChange].classList.remove('animate');
+              setTimeout(() => {
+                  storiesGrid.replaceChild(newCard, currentCards[positionToChange]);
+              }, 300);
+          }
+      }
+  }
 
   // Schedule next rotation
   setTimeout(rotateVideos, getRandomTime());
@@ -1540,37 +1598,35 @@ function rotateVideos() {
 
 // Initialize the grid
 function initializeGrid() {
-  const storiesGrid = document.getElementById("storiesGrid");
-  activeVideos.forEach((video) => {
-    storiesGrid.appendChild(createStoryCard(video));
+  const storiesGrid = document.getElementById('storiesGrid');
+  activeVideos.forEach((video, index) => {
+      storiesGrid.appendChild(createStoryCard(video, index));
   });
   setTimeout(rotateVideos, getRandomTime());
 }
 
 // Video modal functionality
 function openVideoModal(videoId) {
-  const modal = document.getElementById("videoModal");
-  const videoFrame = document.getElementById("videoFrame");
+  const modal = document.getElementById('videoModal');
+  const videoFrame = document.getElementById('videoFrame');
   videoFrame.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
-  modal.classList.add("active");
+  modal.classList.add('active');
 }
 
 function closeVideoModal() {
-  const modal = document.getElementById("videoModal");
-  const videoFrame = document.getElementById("videoFrame");
-  videoFrame.src = "";
-  modal.classList.remove("active");
+  const modal = document.getElementById('videoModal');
+  const videoFrame = document.getElementById('videoFrame');
+  videoFrame.src = '';
+  modal.classList.remove('active');
 }
 
 // Event listeners
-document
-  .getElementById("closeModal")
-  .addEventListener("click", closeVideoModal);
-document.getElementById("videoModal").addEventListener("click", (e) => {
-  if (e.target === document.getElementById("videoModal")) {
-    closeVideoModal();
+document.getElementById('closeModal').addEventListener('click', closeVideoModal);
+document.getElementById('videoModal').addEventListener('click', (e) => {
+  if (e.target === document.getElementById('videoModal')) {
+      closeVideoModal();
   }
 });
 
 // Initialize when the page loads
-document.addEventListener("DOMContentLoaded", initializeGrid);
+document.addEventListener('DOMContentLoaded', initializeGrid);
