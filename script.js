@@ -4,11 +4,6 @@ document.querySelectorAll(".tabNameWrapperStyle").forEach((tab) => {
     const dropDownId = this.getAttribute("data-dropdown");
     console.log("Clicked Tab Text:", dropDownId);
 
-    // const tabId = tabText
-    // ?.toLowerCase()
-    // .replace(/[^a-z0-9&]/g, '') // Sanitize text to match dropdown IDs
-    // .replace(/\s+/g, '');
-    // console.log('Sanitized Tab ID:', tabId);
 
     const dropDown = document.getElementById(dropDownId);
     if (!dropDown) {
@@ -814,199 +809,10 @@ document.querySelector(".play-button").addEventListener("click", () => {
   console.log("Play video clicked");
 });
 
-// Youtube Video Section
-document.addEventListener("DOMContentLoaded", () => {
-  const carousel = document.getElementById("videoCarousel");
-  // const prevButton = document.getElementById("prevButton");
-  // const nextButton = document.getElementById("nextButton");
-  const cards = Array.from(carousel.children);
-  let currentIndex = 2; // Start with middle card
-  let autoScrollInterval;
 
-  function updateCarousel() {
-    // Handle infinite scroll by adjusting the index
-    if (currentIndex < 0) {
-      currentIndex = cards.length - 1;
-    } else if (currentIndex >= cards.length) {
-      currentIndex = 0;
-    }
 
-    cards.forEach((card, index) => {
-      card.style.transition = "all 0.5s ease";
-
-      // Calculate relative position considering the circular nature
-      let relativeIndex = index - currentIndex;
-      if (relativeIndex < -2) relativeIndex += cards.length;
-      if (relativeIndex > 2) relativeIndex -= cards.length;
-
-      if (relativeIndex === 0) {
-        card.style.transform = "translateX(0) scale(1)";
-        card.style.opacity = "1";
-        card.style.zIndex = "3";
-      } else if (relativeIndex === -1 || relativeIndex === cards.length - 1) {
-        card.style.transform = "translateX(-70%) scale(0.9)";
-        card.style.opacity = "0.7";
-        card.style.zIndex = "2";
-      } else if (relativeIndex === -2 || relativeIndex === cards.length - 2) {
-        card.style.transform = "translateX(-140%) scale(0.8)";
-        card.style.opacity = "0.7";
-        card.style.zIndex = "1";
-      } else if (relativeIndex === 1) {
-        card.style.transform = "translateX(70%) scale(0.9)";
-        card.style.opacity = "0.7";
-        card.style.zIndex = "2";
-      } else if (relativeIndex === 2) {
-        card.style.transform = "translateX(140%) scale(0.8)";
-        card.style.opacity = "0.7";
-        card.style.zIndex = "1";
-      } else {
-        card.style.transform = "translateX(200%) scale(0.7)";
-        card.style.opacity = "0";
-        card.style.zIndex = "0";
-      }
-    });
-  }
-
-  function startAutoScroll() {
-    stopAutoScroll(); // Clear any existing interval
-    autoScrollInterval = setInterval(() => {
-      currentIndex++;
-      updateCarousel();
-    }, 2000); // Auto scroll every 2 seconds
-  }
-
-  function stopAutoScroll() {
-    if (autoScrollInterval) {
-      clearInterval(autoScrollInterval);
-    }
-  }
-
-  // prevButton.addEventListener("click", () => {
-  //   currentIndex--;
-  //   updateCarousel();
-  //   // Restart auto-scroll after manual navigation
-  //   startAutoScroll();
-  // });
-
-  // nextButton.addEventListener("click", () => {
-  //   currentIndex++;
-  //   updateCarousel();
-  //   // Restart auto-scroll after manual navigation
-  //   startAutoScroll();
-  // });
-
-  // Pause auto-scroll when hovering over the carousel
-  carousel.addEventListener("mouseenter", stopAutoScroll);
-  carousel.addEventListener("mouseleave", startAutoScroll);
-
-  // Initial setup
-  updateCarousel();
-  startAutoScroll();
-});
-
-//Testimonial Section
-document.addEventListener("DOMContentLoaded", function () {
-  const container = document.querySelector(".testimonials-container");
-  let scrollPosition = 0;
-  const scrollSpeed = 1;
-  let isHovered = false;
-  let lastTimestamp = 0;
-  let animationFrameId;
-
-  // Clone the testimonial cards for infinite scroll
-  const cards = document.querySelectorAll(".testimonial-card");
-  cards.forEach((card) => {
-    const clone = card.cloneNode(true);
-    container.appendChild(clone);
-  });
-
-  container.addEventListener("mouseenter", () => {
-    isHovered = true;
-    cancelAnimationFrame(animationFrameId);
-  });
-
-  container.addEventListener("mouseleave", () => {
-    isHovered = false;
-    lastTimestamp = 0;
-    animationFrameId = requestAnimationFrame(smoothScroll);
-  });
-
-  function smoothScroll(timestamp) {
-    if (!lastTimestamp) lastTimestamp = timestamp;
-    const delta = timestamp - lastTimestamp;
-
-    if (!isHovered) {
-      scrollPosition += scrollSpeed * (delta / 16);
-
-      // Reset scroll position when reaching the end
-      if (scrollPosition >= container.scrollWidth / 2) {
-        scrollPosition = 0;
-      }
-
-      container.scrollLeft = scrollPosition;
-    }
-
-    lastTimestamp = timestamp;
-    animationFrameId = requestAnimationFrame(smoothScroll);
-  }
-
-  // Start the animation
-  animationFrameId = requestAnimationFrame(smoothScroll);
-
-  // Touch and mouse drag scrolling
-  let isScrolling = false;
-  let startX;
-  let scrollLeft;
-
-  container.addEventListener("mousedown", (e) => {
-    isScrolling = true;
-    startX = e.pageX - container.offsetLeft;
-    scrollLeft = container.scrollLeft;
-    cancelAnimationFrame(animationFrameId);
-  });
-
-  container.addEventListener("mousemove", (e) => {
-    if (!isScrolling) return;
-    e.preventDefault();
-    const x = e.pageX - container.offsetLeft;
-    const walk = (x - startX) * 2;
-    container.scrollLeft = scrollLeft - walk;
-  });
-
-  container.addEventListener("mouseup", () => {
-    isScrolling = false;
-    lastTimestamp = 0;
-    animationFrameId = requestAnimationFrame(smoothScroll);
-  });
-
-  container.addEventListener("mouseleave", () => {
-    isScrolling = false;
-  });
-
-  // Touch events
-  container.addEventListener("touchstart", (e) => {
-    isScrolling = true;
-    startX = e.touches[0].pageX - container.offsetLeft;
-    scrollLeft = container.scrollLeft;
-    cancelAnimationFrame(animationFrameId);
-  });
-
-  container.addEventListener("touchmove", (e) => {
-    if (!isScrolling) return;
-    const x = e.touches[0].pageX - container.offsetLeft;
-    const walk = (x - startX) * 2;
-    container.scrollLeft = scrollLeft - walk;
-  });
-
-  container.addEventListener("touchend", () => {
-    isScrolling = false;
-    lastTimestamp = 0;
-    animationFrameId = requestAnimationFrame(smoothScroll);
-  });
-});
 
 // PLANS FUNCTIONALITY SECTION
-// Modal functionality
 document.addEventListener("DOMContentLoaded", () => {
   const plansModal = document.getElementById("plansModal");
   const demoModal = document.getElementById("demoModal");
@@ -1054,111 +860,79 @@ document.addEventListener("DOMContentLoaded", () => {
     demoModal.style.display = "none";
     demoForm.reset();
   });
-
-  // Tabs functionality with dynamic content
-  const tabBtns = document.querySelectorAll(".tab-btn");
-  const contentArea = document.querySelector(".services1-grid");
-
-  const tabContents = {
-    resumes: {
+});
+// Tabs functionality with dynamic content
+const tabContents = {
+  resumes: {
       title: "Other Services Than Offered By India Certify",
       tags: [
-        "GeM Registration",
-        "Food Registration",
-        "Udyam Registration",
-        "ISO Registration",
-        "PF Registration",
-        "Barcode Registration",
-        "Darpan Registration",
-        "ZED Certification",
-        "DSC Registration",
-        "GST Registration",
-        "Gumasta Registration",
-        "ESI Registration",
-        "RCMC Registration",
-        "APEDA Registration",
-        "BIS Registration",
-        "FCRA Registration",
-        "DDT DSP ISP LICENSE",
-        "Startup India Registration",
-        "12A And 80G Registration",
-        "Only 80G Registration",
-      ],
-    },
-    "cover-letters": {
+          "GeM Registration", "Food Registration", "Udyam Registration",
+          "ISO Registration", "PF Registration", "Barcode Registration",
+          "Darpan Registration", "ZED Certification", "DSC Registration",
+          "GST Registration", "Gumasta Registration", "ESI Registration",
+          "RCMC Registration", "APEDA Registration", "BIS Registration",
+          "FCRA Registration", "DDT DSP ISP LICENSE", "Startup India Registration",
+          "12A And 80G Registration", "Only 80G Registration"
+      ]
+  },
+  "cover-letters": {
       title: "Professional Cover Letter Templates",
       tags: [
-        "Entry Level Cover Letter",
-        "Professional Cover Letter",
-        "Creative Cover Letter",
-        "Career Change Cover Letter",
-        "Internal Position Cover Letter",
-        "Academic Cover Letter",
-        "Executive Cover Letter",
-        "Modern Cover Letter",
-        "Federal Cover Letter",
-        "Internship Cover Letter",
-        "Teaching Cover Letter",
-        "Nursing Cover Letter",
-        "IT Cover Letter",
-        "Sales Cover Letter",
-        "Engineering Cover Letter",
-        "Legal Cover Letter",
-      ],
-    },
-    "cv-samples": {
+          "Entry Level Cover Letter", "Professional Cover Letter",
+          "Creative Cover Letter", "Career Change Cover Letter",
+          "Internal Position Cover Letter", "Academic Cover Letter",
+          "Executive Cover Letter", "Modern Cover Letter",
+          "Federal Cover Letter", "Internship Cover Letter",
+          "Teaching Cover Letter", "Nursing Cover Letter",
+          "IT Cover Letter", "Sales Cover Letter",
+          "Engineering Cover Letter", "Legal Cover Letter"
+      ]
+  },
+  "cv-samples": {
       title: "CV Samples By Industry",
       tags: [
-        "Academic CV",
-        "Research CV",
-        "Medical CV",
-        "Scientific CV",
-        "Professor CV",
-        "Graduate CV",
-        "International CV",
-        "Postdoctoral CV",
-        "Fellowship CV",
-        "PhD CV",
-        "Lecturer CV",
-        "Researcher CV",
-        "Scholarship CV",
-        "Student CV",
-        "Technical CV",
-        "Industry CV",
-        "Professional CV",
-        "Executive CV",
-      ],
-    },
-  };
-
-  function updateContent(tabName) {
-    const content = tabContents[tabName];
-    contentArea.innerHTML = `
-    <h3>${content.title}</h3>
-    <div class="service-tags">
-      ${content.tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}
-    </div>
-  `;
-
-    // Reattach click handlers to new tags
-    document.querySelectorAll(".tag").forEach((tag) => {
-      tag.addEventListener("click", () => {
-        console.log(`Selected: ${tag.textContent}`);
-      });
-    });
+          "Academic CV", "Research CV", "Medical CV",
+          "Scientific CV", "Professor CV", "Graduate CV",
+          "International CV", "Postdoctoral CV", "Fellowship CV",
+          "PhD CV", "Lecturer CV", "Researcher CV",
+          "Scholarship CV", "Student CV", "Technical CV",
+          "Industry CV", "Professional CV", "Executive CV"
+      ]
   }
+};
 
-  tabBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
+// Get DOM elements
+const tabButtons = document.querySelectorAll('.tab-btn');
+const contentArea = document.querySelector('.content-area');
+
+// Function to update content
+function updateContent(tabName) {
+  const content = tabContents[tabName];
+  
+  // Update content area
+  contentArea.innerHTML = `
+      <h3>${content.title}</h3>
+      <div class="tag-grid">
+          ${content.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+      </div>
+  `;
+}
+
+// Set initial active tab
+updateContent('resumes');
+
+// Add click handlers to tabs
+tabButtons.forEach(button => {
+  button.addEventListener('click', () => {
       // Remove active class from all buttons
-      tabBtns.forEach((b) => b.classList.remove("active"));
+      tabButtons.forEach(btn => btn.classList.remove('active'));
+      
       // Add active class to clicked button
-      btn.classList.add("active");
-
+      button.classList.add('active');
+      
       // Update content based on selected tab
-      const tabName = btn.dataset.tab;
+      const tabName = button.dataset.tab;
       updateContent(tabName);
-    });
   });
 });
 
@@ -1166,124 +940,6 @@ document.addEventListener("DOMContentLoaded", () => {
 // Set current year in footer
 document.getElementById("current-year").textContent = new Date().getFullYear();
 
-// Newsletter form submission
-document
-  .getElementById("newsletter-form")
-  .addEventListener("submit", function (e) {
-    e.preventDefault();
-    const email = this.querySelector('input[type="email"]').value;
-    console.log("Subscribed:", email);
-    this.reset();
-    alert("Thank you for subscribing!");
-  });
-
-// FAQ Functionality
-const faqQuestions = document.querySelectorAll(".faq-question");
-
-faqQuestions.forEach((question) => {
-  question.addEventListener("click", () => {
-    const answer = question.nextElementSibling;
-    const isActive = question.classList.contains("active");
-
-    // Close all other answers
-    faqQuestions.forEach((q) => {
-      q.classList.remove("active");
-      q.nextElementSibling.classList.remove("active");
-    });
-
-    // Toggle current answer
-    if (!isActive) {
-      question.classList.add("active");
-      answer.classList.add("active");
-    }
-  });
-});
-
-// Email Form Submission
-const emailForm = document.querySelector(".email-signup");
-emailForm?.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const email = emailForm.querySelector('input[type="email"]').value;
-  // Handle email submission
-  console.log("Email submitted:", email);
-  // Here you would typically send this to your backend
-  window.location.href = "/newsletter"; // Redirect to newsletter page
-});
-
-// Contact Form Submission
-const contactForm = document.getElementById("contactForm");
-contactForm?.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const formData = new FormData(contactForm);
-  const data = Object.fromEntries(formData);
-
-  // Handle form submission
-  console.log("Form submitted:", data);
-  // Here you would typically send this to your backend
-  window.location.href = "/newsletter"; // Redirect to newsletter page
-});
-
-// Dropdown functionality for business and revenue type
-const typeSelect = document.querySelector(".type-select");
-const businessTypeDropdown = document.querySelector(".business-type-dropdown");
-const revenueTypeDropdown = document.querySelector(".revenue-type-dropdown");
-const selectedBusinessType = document.querySelector(".selected-business-type");
-const selectedRevenueType = document.querySelector(".selected-revenue-type");
-
-// Toggle dropdowns
-typeSelect?.addEventListener("click", (e) => {
-  const clickedElement = e.target;
-  const isBusinessType = clickedElement.closest(".selected-business-type");
-  const isRevenueType = clickedElement.closest(".selected-revenue-type");
-
-  if (isBusinessType) {
-    businessTypeDropdown?.classList.toggle("active");
-    revenueTypeDropdown?.classList.remove("active");
-  } else if (isRevenueType) {
-    revenueTypeDropdown?.classList.toggle("active");
-    businessTypeDropdown?.classList.remove("active");
-  }
-
-  typeSelect.classList.toggle("active");
-});
-
-// Handle business type selection
-document
-  .querySelectorAll(".business-type-dropdown .dropdown-item")
-  .forEach((item) => {
-    item.addEventListener("click", () => {
-      const value = item.getAttribute("data-value");
-      if (selectedBusinessType && value) {
-        selectedBusinessType.textContent = value;
-        businessTypeDropdown?.classList.remove("active");
-        typeSelect?.classList.remove("active");
-      }
-    });
-  });
-
-// Handle revenue type selection
-document
-  .querySelectorAll(".revenue-type-dropdown .dropdown-item")
-  .forEach((item) => {
-    item.addEventListener("click", () => {
-      const value = item.getAttribute("data-value");
-      if (selectedRevenueType && value) {
-        selectedRevenueType.textContent = value;
-        revenueTypeDropdown?.classList.remove("active");
-        typeSelect?.classList.remove("active");
-      }
-    });
-  });
-
-// Close dropdowns when clicking outside
-document.addEventListener("click", (e) => {
-  const target = e.target;
-  if (!target.closest(".type-select-container")) {
-    businessTypeDropdown?.classList.remove("active");
-    revenueTypeDropdown?.classList.remove("active");
-    typeSelect?.classList.remove("active");
-  }
-});
 
 // DOM Elements
 const helpButton = document.getElementById("helpButton");
@@ -1393,240 +1049,413 @@ document.querySelectorAll(".modal-content").forEach((modal) => {
 });
 
 // Video data array with 10 videos
-// Video data array with 10 videos
 const videoData = [
   {
-      id: 1,
-      videoId: 'dQw4w9WgXcQ',
-      thumbnail: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=300&h=533',
-      title: 'From Startup to Success',
-      description: 'How we helped a local business grow 10x'
+    id: 1,
+    videoId: "dQw4w9WgXcQ",
+    thumbnail: "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=300&h=533",
+    title: "From Startup to Success",
+    description: "How we helped a local business grow 10x",
   },
   {
-      id: 2,
-      videoId: 'dQw4w9WgXcQ',
-      thumbnail: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=300&h=533',
-      title: 'Digital Transformation',
-      description: 'Revolutionizing traditional business'
+    id: 2,
+    videoId: "dQw4w9WgXcQ",
+    thumbnail: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=300&h=533",
+    title: "Digital Transformation",
+    description: "Revolutionizing traditional business",
   },
   {
-      id: 3,
-      videoId: 'dQw4w9WgXcQ',
-      thumbnail: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=300&h=533',
-      title: 'Global Expansion',
-      description: 'Breaking into international markets'
+    id: 3,
+    videoId: "dQw4w9WgXcQ",
+    thumbnail: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=300&h=533",
+    title: "Global Expansion",
+    description: "Breaking into international markets",
   },
   {
-      id: 4,
-      videoId: 'dQw4w9WgXcQ',
-      thumbnail: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=300&h=533',
-      title: 'Tech Innovation',
-      description: 'Building the future of business'
+    id: 4,
+    videoId: "dQw4w9WgXcQ",
+    thumbnail: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=300&h=533",
+    title: "Tech Innovation",
+    description: "Building the future of business",
   },
   {
-      id: 5,
-      videoId: 'dQw4w9WgXcQ',
-      thumbnail: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=300&h=533',
-      title: 'AI Integration',
-      description: 'Implementing smart solutions'
+    id: 5,
+    videoId: "dQw4w9WgXcQ",
+    thumbnail: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=300&h=533",
+    title: "AI Integration",
+    description: "Implementing smart solutions",
   },
   {
-      id: 6,
-      videoId: 'dQw4w9WgXcQ',
-      thumbnail: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=300&h=533',
-      title: 'Team Excellence',
-      description: 'Building high-performance teams'
+    id: 6,
+    videoId: "dQw4w9WgXcQ",
+    thumbnail: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=300&h=533",
+    title: "Team Excellence",
+    description: "Building high-performance teams",
   },
   {
-      id: 7,
-      videoId: 'dQw4w9WgXcQ',
-      thumbnail: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=300&h=533',
-      title: 'Market Analysis',
-      description: 'Data-driven decision making'
+    id: 7,
+    videoId: "dQw4w9WgXcQ",
+    thumbnail: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=300&h=533",
+    title: "Market Analysis",
+    description: "Data-driven decision making",
   },
   {
-      id: 8,
-      videoId: 'dQw4w9WgXcQ',
-      thumbnail: 'https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?auto=format&fit=crop&q=80&w=300&h=533',
-      title: 'Sustainable Growth',
-      description: 'Eco-friendly business solutions'
+    id: 8,
+    videoId: "dQw4w9WgXcQ",
+    thumbnail: "https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?auto=format&fit=crop&q=80&w=300&h=533",
+    title: "Sustainable Growth",
+    description: "Eco-friendly business solutions",
   },
   {
-      id: 9,
-      videoId: 'dQw4w9WgXcQ',
-      thumbnail: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=300&h=533',
-      title: 'Cloud Solutions',
-      description: 'Modern infrastructure setup'
+    id: 9,
+    videoId: "dQw4w9WgXcQ",
+    thumbnail: "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=300&h=533",
+    title: "Cloud Solutions",
+    description: "Modern infrastructure setup",
   },
   {
-      id: 10,
-      videoId: 'dQw4w9WgXcQ',
-      thumbnail: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=300&h=533',
-      title: 'Customer Success',
-      description: 'Building lasting relationships'
+    id: 10,
+    videoId: "dQw4w9WgXcQ",
+    thumbnail: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=300&h=533",
+    title: "Customer Success",
+    description: "Building lasting relationships",
+  },
+  {
+    id: 11,
+    videoId: "dQw4w9WgXcQ",
+    thumbnail: "https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80&w=300&h=533",
+    title: "Remote Workforce",
+    description: "Building distributed teams",
+  },
+  {
+    id: 12,
+    videoId: "dQw4w9WgXcQ",
+    thumbnail: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&q=80&w=300&h=533",
+    title: "Office Transformation",
+    description: "Creating productive workspaces",
   }
 ];
 
 // Keep track of currently displayed videos and their positions
 let activeVideos = videoData.slice(0, 4);
-let lastChangedPositions = new Set(); // Track recently changed positions
-let hoveredPositions = new Set(); // Track positions being hovered
+let lastChangedPositions = new Set();
+let hoveredPositions = new Set();
+let usedAnimations = new Set();
+
+// All available animations
+const animations = [
+  'fade-out-in',
+  'slide-left',
+  'slide-right',
+  'zoom-out-in',
+  'flip-card',
+  'rotate-card',
+  'bounce-scale',
+  'twist-fade',
+  'slide-up-down',
+  'diagonal-slide',
+  'ripple-effect',
+  'glitch-effect',
+  'swing-effect',
+  'pulse-wave',
+  'flip-vertical',
+  'blur-shift',
+  'elastic-bounce'
+];
 
 // Function to create a story card
 function createStoryCard(video, position) {
-  const card = document.createElement('div');
-  card.className = 'story-card';
+  const card = document.createElement("div");
+  card.className = "story-card";
   card.dataset.position = position;
+  card.dataset.videoId = video.id;
   card.innerHTML = `
-      <div class="video-container">
-          <div class="thumbnail-overlay"></div>
-          <img src="${video.thumbnail}" alt="${video.title}" class="video-thumbnail">
-          <button class="play-btn">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
-              </svg>
-          </button>
-      </div>
-      <div class="story-info">
-          <h3>${video.title}</h3>
-          <p>${video.description}</p>
-      </div>
+    <div class="video-container">
+      <div class="thumbnail-overlay"></div>
+      <img src="${video.thumbnail}" alt="${video.title}" class="video-thumbnail">
+      <button class="play-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="5 3 19 12 5 21 5 3"></polygon>
+        </svg>
+      </button>
+    </div>
+    <div class="story-info">
+      <h3>${video.title}</h3>
+      <p>${video.description}</p>
+    </div>
   `;
 
-  // Add hover events
-  card.addEventListener('mouseenter', () => {
-      hoveredPositions.add(position);
-  });
-  
-  card.addEventListener('mouseleave', () => {
-      hoveredPositions.delete(position);
+  card.addEventListener("mouseenter", () => {
+    hoveredPositions.add(position);
   });
 
-  // Add click event listener
-  card.addEventListener('click', () => openVideoModal(video.videoId));
+  card.addEventListener("mouseleave", () => {
+    hoveredPositions.delete(position);
+  });
 
-  // Add animation class after a short delay
-  setTimeout(() => card.classList.add('animate'), 100);
+  card.addEventListener("click", () => openVideoModal(video.videoId));
+
+  setTimeout(() => card.classList.add("animate"), 100 * position);
 
   return card;
 }
 
-// Function to get random time between 3 and 7 seconds
+// Function to get random time between 3 and 6 seconds
 function getRandomTime() {
-  return Math.floor(Math.random() * (7000 - 5000) + 1000);
+  return Math.floor(Math.random() * (6000 - 3000) + 3000);
 }
 
 // Function to get a random position that hasn't been changed recently and isn't being hovered
 function getRandomPosition() {
   let availablePositions = [];
   for (let i = 0; i < 4; i++) {
-      // Only include positions that aren't being hovered and haven't been changed recently
-      if (!lastChangedPositions.has(i) && !hoveredPositions.has(i)) {
-          availablePositions.push(i);
-      }
+    if (!lastChangedPositions.has(i) && !hoveredPositions.has(i)) {
+      availablePositions.push(i);
+    }
   }
-  
-  // If all positions were recently changed or are being hovered, only exclude hovered positions
+
   if (availablePositions.length === 0) {
-      availablePositions = [];
-      for (let i = 0; i < 4; i++) {
-          if (!hoveredPositions.has(i)) {
-              availablePositions.push(i);
-          }
+    availablePositions = [];
+    for (let i = 0; i < 4; i++) {
+      if (!hoveredPositions.has(i)) {
+        availablePositions.push(i);
       }
+    }
   }
-  
-  // If all positions are being hovered, return null
+
   if (availablePositions.length === 0) {
-      return null;
+    return null;
   }
-  
+
   const randomIndex = Math.floor(Math.random() * availablePositions.length);
   const position = availablePositions[randomIndex];
-  
-  // Track this position as recently changed
+
   lastChangedPositions.add(position);
-  
-  // If we've tracked too many positions, remove the oldest one
+
   if (lastChangedPositions.size > 2) {
-      lastChangedPositions.delete([...lastChangedPositions][0]);
+    lastChangedPositions.delete([...lastChangedPositions][0]);
   }
-  
+
   return position;
 }
 
-// Function to rotate videos
+// Function to get a random animation that hasn't been used recently
+function getRandomAnimation() {
+  let availableAnimations = animations.filter(animation => !usedAnimations.has(animation));
+  
+  if (availableAnimations.length === 0) {
+    usedAnimations.clear();
+    availableAnimations = animations;
+  }
+  
+  const randomIndex = Math.floor(Math.random() * availableAnimations.length);
+  const animation = availableAnimations[randomIndex];
+  
+  usedAnimations.add(animation);
+  
+  if (usedAnimations.size > 5) {
+    usedAnimations.delete([...usedAnimations][0]);
+  }
+  
+  return animation;
+}
+
+// Function to create a unique transition effect
+function createUniqueTransition(oldCard, newCard, position) {
+  const animation = getRandomAnimation();
+  const storiesGrid = document.getElementById("storiesGrid");
+  
+  // Create a clone of the old card for the transition
+  const transitionCard = oldCard.cloneNode(true);
+  transitionCard.classList.add(animation);
+  transitionCard.style.position = 'absolute';
+  transitionCard.style.top = `${oldCard.offsetTop}px`;
+  transitionCard.style.left = `${oldCard.offsetLeft}px`;
+  transitionCard.style.width = `${oldCard.offsetWidth}px`;
+  transitionCard.style.height = `${oldCard.offsetHeight}px`;
+  transitionCard.style.zIndex = '20';
+  
+  // Add the transition card to the grid
+  storiesGrid.appendChild(transitionCard);
+  
+  // Hide the original card
+  oldCard.style.opacity = '0';
+  
+  // After animation completes, replace the old card with the new one
+  setTimeout(() => {
+    storiesGrid.removeChild(transitionCard);
+    storiesGrid.replaceChild(newCard, oldCard);
+    
+    // Add a subtle entrance animation to the new card
+    newCard.style.opacity = '0';
+    newCard.style.transform = 'scale(0.95)';
+    
+    setTimeout(() => {
+      newCard.style.opacity = '1';
+      newCard.style.transform = 'scale(1)';
+      newCard.style.transition = 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+    }, 50);
+  }, 1200);
+  
+  // Return the animation name for logging
+  return animation;
+}
+
+// Function to rotate videos with unique animations
 function rotateVideos() {
-  const storiesGrid = document.getElementById('storiesGrid');
-  
-  // Get a random position to change
+  const storiesGrid = document.getElementById("storiesGrid");
+  if (!storiesGrid) return;
+
   const positionToChange = getRandomPosition();
-  
-  // If we found a valid position to change (not being hovered)
+
   if (positionToChange !== null) {
-      // Get available videos (ones not currently displayed)
-      const remainingVideos = videoData.filter(video => 
-          !activeVideos.find(active => active.id === video.id)
-      );
-      
-      if (remainingVideos.length > 0) {
-          // Select a random new video
-          const randomNewVideo = remainingVideos[Math.floor(Math.random() * remainingVideos.length)];
-          
-          // Create the new card first
-          const newCard = createStoryCard(randomNewVideo, positionToChange);
-          
-          // Replace the old video in the activeVideos array
-          activeVideos[positionToChange] = randomNewVideo;
-          
-          // Get all current cards
-          const currentCards = storiesGrid.children;
-          
-          // Replace only the card at the selected position
-          if (currentCards[positionToChange]) {
-              currentCards[positionToChange].classList.remove('animate');
-              setTimeout(() => {
-                  storiesGrid.replaceChild(newCard, currentCards[positionToChange]);
-              }, 300);
-          }
+    // Get videos that aren't currently displayed
+    const remainingVideos = videoData.filter(
+      (video) => !activeVideos.some((active) => active.id === video.id)
+    );
+
+    if (remainingVideos.length > 0) {
+      const randomNewVideo =
+        remainingVideos[Math.floor(Math.random() * remainingVideos.length)];
+
+      const oldCard = storiesGrid.children[positionToChange];
+      if (oldCard) {
+        // Create new card
+        const newCard = createStoryCard(randomNewVideo, positionToChange);
+        
+        // Apply unique transition effect
+        createUniqueTransition(oldCard, newCard, positionToChange);
+        
+        // Update active videos array
+        activeVideos[positionToChange] = randomNewVideo;
       }
+    }
   }
 
-  // Schedule next rotation
   setTimeout(rotateVideos, getRandomTime());
 }
 
 // Initialize the grid
 function initializeGrid() {
-  const storiesGrid = document.getElementById('storiesGrid');
+  const storiesGrid = document.getElementById("storiesGrid");
+  if (!storiesGrid) return;
+  
+  // Clear existing content
+  storiesGrid.innerHTML = '';
+  
+  // Add initial videos
   activeVideos.forEach((video, index) => {
-      storiesGrid.appendChild(createStoryCard(video, index));
+    storiesGrid.appendChild(createStoryCard(video, index));
   });
-  setTimeout(rotateVideos, getRandomTime());
+  
+  // Start rotating videos after a delay
+  setTimeout(rotateVideos, 3000);
 }
 
 // Video modal functionality
 function openVideoModal(videoId) {
-  const modal = document.getElementById('videoModal');
-  const videoFrame = document.getElementById('videoFrame');
+  const modal = document.getElementById("videoModal");
+  const videoFrame = document.getElementById("videoFrame");
+  if (!modal || !videoFrame) return;
+  
   videoFrame.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
-  modal.classList.add('active');
+  modal.classList.add("active");
 }
 
 function closeVideoModal() {
-  const modal = document.getElementById('videoModal');
-  const videoFrame = document.getElementById('videoFrame');
-  videoFrame.src = '';
-  modal.classList.remove('active');
+  const modal = document.getElementById("videoModal");
+  const videoFrame = document.getElementById("videoFrame");
+  if (!modal || !videoFrame) return;
+  
+  videoFrame.src = "";
+  modal.classList.remove("active");
 }
 
 // Event listeners
-document.getElementById('closeModal').addEventListener('click', closeVideoModal);
-document.getElementById('videoModal').addEventListener('click', (e) => {
-  if (e.target === document.getElementById('videoModal')) {
-      closeVideoModal();
+document.addEventListener("DOMContentLoaded", () => {
+  const closeModalBtn = document.getElementById("closeModal");
+  const videoModal = document.getElementById("videoModal");
+  
+  if (closeModalBtn) {
+    closeModalBtn.addEventListener("click", closeVideoModal);
+  }
+  
+  if (videoModal) {
+    videoModal.addEventListener("click", (e) => {
+      if (e.target === videoModal) {
+        closeVideoModal();
+      }
+    });
+  }
+  
+  // Initialize the grid
+  initializeGrid();
+});
+
+// Email Form Submission
+document.querySelector(".get-info-btn").addEventListener("click", function () {
+  const email = document.querySelector(".email-input").value;
+  if (email) {
+    alert("Thank you! We will send more information to " + email);
+    document.querySelector(".email-input").value = "";
+  } else {
+    alert("Please enter your email address");
   }
 });
 
-// Initialize when the page loads
-document.addEventListener('DOMContentLoaded', initializeGrid);
+// Modal Functions
+function openModal() {
+  document.getElementById("formModal").style.display = "block";
+  generateCaptcha();
+}
+
+function closeModal() {
+  document.getElementById("formModal").style.display = "none";
+}
+
+function closeSuccessModal() {
+  document.getElementById("successModal").style.display = "none";
+}
+
+// Captcha Generation
+function generateCaptcha() {
+  const chars =
+    "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+  let captcha = "";
+  for (let i = 0; i < 6; i++) {
+    captcha += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  document.getElementById("captcha").textContent = captcha;
+}
+
+// Form Submission
+function submitForm(event) {
+  event.preventDefault();
+
+  // Validate captcha
+  const captchaInput = document.getElementById("captchaInput").value;
+  const captchaText = document.getElementById("captcha").textContent;
+
+  if (captchaInput !== captchaText) {
+    alert("Invalid Captcha! Please try again.");
+    generateCaptcha();
+    document.getElementById("captchaInput").value = "";
+    return;
+  }
+
+  // Validate terms
+  if (!document.getElementById("terms").checked) {
+    alert("Please accept the Terms and Conditions");
+    return;
+  }
+
+  // Close form modal and show success modal
+  document.getElementById("formModal").style.display = "none";
+  document.getElementById("successModal").style.display = "block";
+
+  // Reset form
+  event.target.reset();
+}
+
+// Generate initial captcha
+generateCaptcha();
