@@ -1,0 +1,4746 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full" data-theme="true" data-theme-mode="light">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="images/favicon.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+    <link rel="shortcut icon" href="images/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.png" />
+    <meta name="apple-mobile-web-app-title" content="India Certify" />
+
+    <title>IndiaCertify - Online Portal for Business Consultation</title>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+    <link rel="dns-prefetch" href="https://www.google.com" />
+    <link rel="dns-prefetch" href="https://www.google.co.in" />
+    <link rel="dns-prefetch" href="https://www.gstatic.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+    <link
+      href="https://udyogsuvidhakendra.in/vendors/bootstrap/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://udyogsuvidhakendra.in/dist/css/style.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Include Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body
+    class="bg-white"
+    data-spy="scroll"
+    data-target=".navbar"
+    data-offset="60"
+  >
+    <div class="alt-nav">
+      <nav
+        class="bg-white navbar navbar-expand-sm font-18 font-weight-400 navbar-light"
+        id="navbar_top"
+      >
+        <div class="container px-0">
+          <a
+            class="navbar-toggle-btn nav-link-hover navbar-toggler"
+            href="javascript:void(0);"
+            data-toggle="collapse"
+            data-target="#navbarCollapseAlt"
+            aria-controls="navbarCollapseAlt"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="feather-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-menu"
+              >
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+              </svg>
+            </span>
+          </a>
+          <div class="navbar-header">
+            <ul class="nav navbar-nav">
+              <li class="nav-item mr-auto">
+                <a class="navbar-brand" href="/"
+                  ><span class="India Certify"></span>
+                  <img
+                    src="images/logo.svg"
+                    height="38"
+                    alt="India Certify logo"
+                  />
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- Horizontal menu content-->
+          <div
+            class="collapse navbar-collapse navbar-light container"
+            id="navbar_right"
+          >
+            <div
+              class="font-18 navbar-container main-menu-content"
+              data-menu="menu-container"
+            >
+              <ul
+                class="nav navbar-nav"
+                id="main-menu-navigation"
+                data-menu="menu-navigation"
+              >
+                <div class="menu">
+                  <div class="tabsContainer">
+                    <div class="tabNameWrapperStyle" data-dropdown="business">
+                      <a class="nav-link d-flex align-items-center" href="#">
+                        <span style="color: #4867aa">
+                          <p class="tabName tabNameStyle">
+                            <i class="fa-solid fa-sparkles text-red"></i>
+                            Business
+                            <i class="arrow fa fa-angle-down"></i>
+                          </p>
+                        </span>
+                      </a>
+                    </div>
+                    <div
+                      class="tabNameWrapperStyle"
+                      data-dropdown="tax&compliance"
+                    >
+                      <a class="nav-link d-flex align-items-center" href="#">
+                        <span style="color: #4867aa">
+                          <p class="tabName tabNameStyle">
+                            <i class="fa-solid fa-briefcase text-red"></i> Tax &
+                            Compliance
+                            <i class="arrow fa fa-angle-down"></i>
+                          </p>
+                        </span>
+                      </a>
+                    </div>
+                    <div
+                      class="tabNameWrapperStyle"
+                      data-dropdown="trademark&ip"
+                    >
+                      <a class="nav-link d-flex align-items-center" href="#">
+                        <span style="color: #4867aa">
+                          <p class="tabName tabNameStyle">
+                            <i class="fa-solid fa-shield-check text-red"></i>
+                            Trademark & IP
+                            <i class="arrow fa fa-angle-down"></i>
+                          </p>
+                        </span>
+                      </a>
+                    </div>
+                    <div
+                      class="tabNameWrapperStyle"
+                      data-dropdown="documentation"
+                    >
+                      <a class="nav-link d-flex align-items-center" href="#">
+                        <span style="color: #4867aa">
+                          <p class="tabName tabNameStyle">
+                            <i class="fa-solid fa-coin-vertical text-red"></i>
+                            Documentation
+                            <i class="arrow fa fa-angle-down"></i>
+                          </p>
+                        </span>
+                      </a>
+                    </div>
+                    <div class="tabNameWrapperStyle" data-dropdown="others">
+                      <a class="nav-link d-flex align-items-center" href="#">
+                        <span style="color: #4867aa">
+                          <p class="tabName tabNameStyle">
+                            <i
+                              class="fa-regular fa-solid fa-gear-complex-code text-red"
+                            ></i>
+                            Others
+                            <i class="arrow fa fa-angle-down"></i>
+                          </p>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="dropDownContainer hidden" id="business">
+                    <div class="leftNavWrapper">
+                      <div class="leftNavContainer">
+                        <!-- Business Registration -->
+                        <button
+                          class="menuItem"
+                          data-info="businessRegistration"
+                        >
+                          <img
+                            src="https://assets.vakilsearch.com/header-desktop/Register+a+Business.svg"
+                            alt="Business Registration"
+                            width="35"
+                            height="30"
+                          />
+                          <span>Business Registration</span>
+                        </button>
+                        <!-- International Business Setup -->
+                        <button
+                          class="menuItem"
+                          data-info="internationalBusiness"
+                        >
+                          <img
+                            src="https://assets.vakilsearch.com/header-desktop/International+Business+Setup.svg"
+                            alt="International Business Setup"
+                            width="35"
+                            height="30"
+                          />
+                          <span>International Business Setup</span>
+                        </button>
+                        <!-- Company Name Search -->
+                        <button class="menuItem" data-info="companynamesearch">
+                          <img
+                            src="https://assets.vakilsearch.com/header-desktop/Company+Name+Search.svg"
+                            alt="Company Name Search"
+                            width="35"
+                            height="30"
+                          />
+                          <span>Company Name Search</span>
+                        </button>
+                        <!-- Licenses & Registrations -->
+                        <button
+                          class="menuItem"
+                          data-info="licensesandRegistrations"
+                          onmouseover="handleHover('licensesandRegistrations')"
+                        >
+                          <img
+                            src="https://assets.vakilsearch.com/header-desktop/Licenses+%26+Registrations.svg"
+                            alt="Licenses & Registrations"
+                            width="35"
+                            height="30"
+                          />
+                          <span>Licenses & Registrations</span>
+                        </button>
+                        <!-- Web Development -->
+                        <button class="menuItem" data-info="webDevelopment">
+                          <img
+                            src="https://assets.vakilsearch.com/header-desktop/Web+Development.svg"
+                            alt="Web Development"
+                            width="35"
+                            height="30"
+                          />
+                          <span>Web Development</span>
+                        </button>
+                      </div>
+                      <!-- Right Section -->
+                      <div class="rightSection">
+                        <h3 id="sectionTitle">Business Registration</h3>
+                        <ul id="sectionList">
+                          <li>Private Limited Company</li>
+                          <li>Limited Liability Partnership</li>
+                          <li>One Person Company</li>
+                          <li>Sole Proprietorship</li>
+                          <li>Nidhi Company</li>
+                          <li>Producer Company</li>
+                          <li>Partnership Firm</li>
+                          <li>Startup India Registration</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="appointmentContainer">
+                      <div class="bookAppointment">
+                        <img
+                          src="https://assets.vakilsearch.com/header-desktop/bookAppoitment.svg"
+                          alt="Book Appointment"
+                          width="30"
+                          height="30"
+                        />
+                        <p>Prefer to talk to a business advisor first?</p>
+                        <a
+                          href="https://vakilsearch.com/business-consulting-services-india"
+                          >Book a call back</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="dropDownContainer hidden"
+                    id="tax&compliance"
+                    style="transform: translateX(2px)"
+                  >
+                    <div class="leftNavWrapper">
+                      <div class="leftNavContainer">
+                        <!-- GST and Other Indirect Tax -->
+                        <button
+                          class="menuItem"
+                          data-info="gstandotherindirecttax"
+                        >
+                          <img
+                            src="https://assets.vakilsearch.com/header-desktop/GST+and+Other+Indirect+Tax.svg"
+                            alt="GST and Other Indirect Tax"
+                            width="35"
+                            height="30"
+                          />
+                          <span>GST and Other Indirect Tax</span>
+                        </button>
+                        <!-- Changes in Pvt Ltd Company -->
+                        <button
+                          class="menuItem"
+                          data-info="changesinpvtltdcompany"
+                        >
+                          <img
+                            src="https://assets.vakilsearch.com/header-desktop/Changes+in+Pvt+Ltd+Company.svg"
+                            alt="Changes in Pvt Ltd Company"
+                            width="35"
+                            height="30"
+                          />
+                          <span>Changes in Pvt Ltd Company</span>
+                        </button>
+                        <!-- Changes In Limited Liability Partnership -->
+                        <button
+                          class="menuItem"
+                          data-info="changesinlimitedliabilitypartnership"
+                        >
+                          <img
+                            src="https://assets.vakilsearch.com/header-desktop/Changes+In+Limited+Liability+Partnership.svg"
+                            alt="Changes In Limited Liability Partnership"
+                            width="35"
+                            height="30"
+                          />
+                          <span>Changes In Limited Liability Partnership</span>
+                        </button>
+                        <!-- Mandatory Annual Filings -->
+                        <button
+                          class="menuItem"
+                          data-info="mandatoryannualfilings"
+                        >
+                          <img
+                            src="https://assets.vakilsearch.com/header-desktop/Mandatory+Annual+Filings.svg"
+                            alt="Mandatory Annual Filings"
+                            width="35"
+                            height="30"
+                          />
+                          <span>Mandatory Annual Filings</span>
+                        </button>
+                        <!-- Labour Compliance -->
+                        <button class="menuItem" data-info="labourcompliance">
+                          <img
+                            src="https://assets.vakilsearch.com/header-desktop/Labour+Compliance.svg"
+                            alt="Labour Compliance"
+                            width="35"
+                            height="30"
+                          />
+                          <span>Labour Compliance</span>
+                        </button>
+                        <!-- Accounting & Tax -->
+                        <button class="menuItem" data-info="accounting&tax">
+                          <img
+                            src="https://assets.vakilsearch.com/header-desktop/Accounting+%26+Tax.svg"
+                            alt="Accounting & Tax"
+                            width="35"
+                            height="30"
+                          />
+                          <span>Accounting & Tax</span>
+                        </button>
+                        <!-- Convert Your Business -->
+                        <button
+                          class="menuItem"
+                          data-info="convertyourbusiness"
+                        >
+                          <img
+                            src="https://assets.vakilsearch.com/header-desktop/Convert+Your+Business.svg"
+                            alt="Convert Your Business"
+                            width="35"
+                            height="30"
+                          />
+                          <span>Convert Your Business</span>
+                        </button>
+                      </div>
+                      <!-- Right Section -->
+                      <div class="rightSection">
+                        <h3 id="sectionTitle">GST and Other Indirect Tax</h3>
+                        <ul id="sectionList">
+                          <li>GST Registration</li>
+                          <li>GST Filing</li>
+                          <li>GST Login Portal</li>
+                          <li>HSN Code Finder</li>
+                          <li>GST Cancellation and Revocation</li>
+                          <li>Indirect Tax</li>
+                          <li>RoDTEP</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="appointmentContainer">
+                      <div class="bookAppointment">
+                        <img
+                          src="https://assets.vakilsearch.com/header-desktop/bookAppoitment.svg"
+                          alt="Book Appointment"
+                          width="30"
+                          height="30"
+                        />
+                        <p>Prefer to talk to a business advisor first?</p>
+                        <a
+                          href="https://vakilsearch.com/business-consulting-services-india"
+                          >Book a call back</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="dropDownContainer hidden"
+                    id="trademark&ip"
+                    style="transform: translateX(8px)"
+                  >
+                    <div class="leftNavWrapper">
+                      <div class="leftNavContainer">
+                        <!-- Trademark -->
+                        <button class="menuItem" data-info="trademark">
+                          <img
+                            src="https://assets.vakilsearch.com/header-desktop/Trademark.svg"
+                            alt="Trademark"
+                            width="35"
+                            height="30"
+                          />
+                          <span>Trademark</span>
+                        </button>
+                        <!-- Copyright -->
+                        <button class="menuItem" data-info="copyright">
+                          <img
+                            src="https://assets.vakilsearch.com/header-desktop/Copyright.svg"
+                            alt="Copyright"
+                            width="35"
+                            height="30"
+                          />
+                          <span>Copyright</span>
+                        </button>
+                        <!-- Patent -->
+                        <button class="menuItem" data-info="patent">
+                          <img
+                            src="https://assets.vakilsearch.com/header-desktop/Patent.svg"
+                            alt="Patent"
+                            width="35"
+                            height="30"
+                          />
+                          <span>Patent</span>
+                        </button>
+                        <!-- Infringement -->
+                        <button class="menuItem" data-info="infrigement">
+                          <img
+                            src="https://assets.vakilsearch.com/header-desktop/Infringement.svg"
+                            alt="Infringement"
+                            width="35"
+                            height="30"
+                          />
+                          <span>Infringement</span>
+                        </button>
+                        <!-- Design Registration -->
+                        <button class="menuItem" data-info="designregistration">
+                          <img
+                            src="https://assets.vakilsearch.com/header-desktop/Design+Registration.svg"
+                            alt="Design Registration"
+                            width="35"
+                            height="30"
+                          />
+                          <span>Design Registration</span>
+                        </button>
+                      </div>
+                      <!-- Right Section -->
+                      <div class="rightSection">
+                        <h3 id="sectionTitle">Trademark</h3>
+                        <ul id="sectionList">
+                          <li>Trademark Registration</li>
+                          <li>Trademark Search</li>
+                          <li>Respond to TM Objection</li>
+                          <li>Well Known Trademark</li>
+                          <li>Trademark Watch</li>
+                          <li>Trademark Renewal</li>
+                          <li>Trademark Assignment</li>
+                          <li>USA Trademark</li>
+                          <li>International Trademark</li>
+                          <li>Trademark Class Finder</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="appointmentContainer">
+                      <div class="bookAppointment">
+                        <img
+                          src="https://assets.vakilsearch.com/header-desktop/bookAppoitment.svg"
+                          alt="Book Appointment"
+                          width="30"
+                          height="30"
+                        />
+                        <p>Prefer to talk to a business advisor first?</p>
+                        <a
+                          href="https://vakilsearch.com/business-consulting-services-india"
+                          >Book a call back</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="dropDownContainer hidden"
+                    id="documentation"
+                    style="transform: translateX(2px)"
+                  >
+                    <div class="leftNavWrapper">
+                      <div class="leftNavContainer">
+                        <!-- Business Contracts -->
+                        <button class="menuItem" data-info="businesscontracts">
+                          <img
+                            src="https://assets.vakilsearch.com/header-desktop/Business+Contracts.svg"
+                            alt="Business Contracts"
+                            width="35"
+                            height="30"
+                          />
+                          <span>Business Contracts</span>
+                        </button>
+                        <!-- Personal & Family -->
+                        <button class="menuItem" data-info="personal&family">
+                          <img
+                            src="https://assets.vakilsearch.com/header-desktop/Personal+%26+Family.svg"
+                            alt="Personal & Family"
+                            width="35"
+                            height="30"
+                          />
+                          <span>Personal & Family</span>
+                        </button>
+                        <!-- Real Estate -->
+                        <button class="menuItem" data-info="realestate">
+                          <img
+                            src="https://assets.vakilsearch.com/header-desktop/Real+Estate.svg"
+                            alt="Real Estate"
+                            width="35"
+                            height="30"
+                          />
+                          <span>Real Estate</span>
+                        </button>
+                        <!-- Notices -->
+                        <button class="menuItem" data-info="notices">
+                          <img
+                            src="https://assets.vakilsearch.com/header-desktop/Notices.svg"
+                            alt="Notices"
+                            width="35"
+                            height="30"
+                          />
+                          <span>Notices</span>
+                        </button>
+                        <!-- HR Policies -->
+                        <button class="menuItem" data-info="hrpolicies">
+                          <img
+                            src="https://assets.vakilsearch.com/header-desktop/HR+Policies.svg"
+                            alt="HR Policies"
+                            width="35"
+                            height="30"
+                          />
+                          <span>HR Policies</span>
+                        </button>
+                      </div>
+                      <!-- Right Section -->
+                      <div class="rightSection">
+                        <h3 id="sectionTitle">Business Contracts</h3>
+                        <ul id="sectionList">
+                          <li>Non Disclosure Agreement NDA</li>
+                          <li>Services Level Agreement</li>
+                          <li>Franchise Agreement</li>
+                          <li>Master Services Agreement</li>
+                          <li>Shareholders Agreement</li>
+                          <li>Joint Venture Agreement</li>
+                          <li>Founders Agreement</li>
+                          <li>Vendor Agreement</li>
+                          <li>Consultancy Agreement</li>
+                          <li>Memorandum of Understanding</li>
+                          <li>Succession Certificate</li>
+                          <li>Scope of Work Agreement</li>
+                          <li>Share Purchase Agreement</li>
+                          <li>Relinquishment Deed</li>
+                          <li>Legal Heir Certificate</li>
+                          <li>Trade License</li>
+                          <li>Noncompete Agreement</li>
+                          <li>Finance Agreement</li>
+                          <li>GDPR</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="appointmentContainer">
+                      <div class="bookAppointment">
+                        <img
+                          src="https://assets.vakilsearch.com/header-desktop/bookAppoitment.svg"
+                          alt="Book Appointment"
+                          width="30"
+                          height="30"
+                        />
+                        <p>Prefer to talk to a business advisor first?</p>
+                        <a
+                          href="https://vakilsearch.com/business-consulting-services-india"
+                          >Book a call back</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="dropDownContainer hidden"
+                    id="others"
+                    style="transform: translateX(-2px)"
+                  >
+                    <div class="leftNavWrapper">
+                      <div class="leftNavContainer">
+                        <!-- Fundraising -->
+                        <button class="menuItem" data-info="fundraising">
+                          <img
+                            src="https://assets.vakilsearch.com/header-desktop/Fundraising.svg"
+                            alt="Fundraising"
+                            width="35"
+                            height="30"
+                          />
+                          <span>Fundraising</span>
+                        </button>
+                        <!-- NGO -->
+                        <button class="menuItem" data-info="ngo">
+                          <img
+                            src="https://assets.vakilsearch.com/header-desktop/NGO+Registration.svg"
+                            alt="NGO"
+                            width="35"
+                            height="30"
+                          />
+                          <span>NGO</span>
+                        </button>
+                        <!-- Property & Personal -->
+                        <button class="menuItem" data-info="property&personal">
+                          <img
+                            src="https://assets.vakilsearch.com/header-desktop/Property+%26+Personal.svg"
+                            alt="Property & Personal"
+                            width="35"
+                            height="30"
+                          />
+                          <span>Property & Personal</span>
+                        </button>
+                        <!-- Lawyers & Experts -->
+                        <button class="menuItem" data-info="lawyers&experts">
+                          <img
+                            src="https://assets.vakilsearch.com/header-desktop/Fundraising.svg"
+                            alt="Lawyers & Experts"
+                            width="35"
+                            height="30"
+                          />
+                          <span>Lawyers & Experts</span>
+                        </button>
+                      </div>
+                      <!-- Right Section -->
+                      <div class="rightSection">
+                        <h3 id="sectionTitle">Fundraising</h3>
+                        <ul id="sectionList">
+                          <li>Fundraising</li>
+                          <li>Pitch-Deck</li>
+                          <li>Business Loan</li>
+                          <li>DPR Services</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="appointmentContainer">
+                      <div class="bookAppointment">
+                        <img
+                          src="https://assets.vakilsearch.com/header-desktop/bookAppoitment.svg"
+                          alt="Book Appointment"
+                          width="30"
+                          height="30"
+                        />
+                        <p>Prefer to talk to a business advisor first?</p>
+                        <a
+                          href="https://vakilsearch.com/business-consulting-services-india"
+                          >Book a call back</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="digital-container">
+          <button class="uiverse">
+            <div class="star-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xml:space="preserve"
+                version="1.1"
+                style="
+                  shape-rendering: geometricPrecision;
+                  text-rendering: geometricPrecision;
+                  image-rendering: optimizeQuality;
+                  fill-rule: evenodd;
+                  clip-rule: evenodd;
+                "
+                viewBox="0 0 784.11 815.53"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <defs></defs>
+                <g id="Layer_x0020_1">
+                  <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                  <path
+                    class="fil0"
+                    d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                  ></path>
+                </g>
+              </svg>
+            </div>
+            <div class="star-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xml:space="preserve"
+                version="1.1"
+                style="
+                  shape-rendering: geometricPrecision;
+                  text-rendering: geometricPrecision;
+                  image-rendering: optimizeQuality;
+                  fill-rule: evenodd;
+                  clip-rule: evenodd;
+                "
+                viewBox="0 0 784.11 815.53"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <defs></defs>
+                <g id="Layer_x0020_1">
+                  <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                  <path
+                    class="fil0"
+                    d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                  ></path>
+                </g>
+              </svg>
+            </div>
+            <div class="star-3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xml:space="preserve"
+                version="1.1"
+                style="
+                  shape-rendering: geometricPrecision;
+                  text-rendering: geometricPrecision;
+                  image-rendering: optimizeQuality;
+                  fill-rule: evenodd;
+                  clip-rule: evenodd;
+                "
+                viewBox="0 0 784.11 815.53"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <defs></defs>
+                <g id="Layer_x0020_1">
+                  <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                  <path
+                    class="fil0"
+                    d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                  ></path>
+                </g>
+              </svg>
+            </div>
+            <div class="star-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xml:space="preserve"
+                version="1.1"
+                style="
+                  shape-rendering: geometricPrecision;
+                  text-rendering: geometricPrecision;
+                  image-rendering: optimizeQuality;
+                  fill-rule: evenodd;
+                  clip-rule: evenodd;
+                "
+                viewBox="0 0 784.11 815.53"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <defs></defs>
+                <g id="Layer_x0020_1">
+                  <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                  <path
+                    class="fil0"
+                    d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                  ></path>
+                </g>
+              </svg>
+            </div>
+            <div class="star-5">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xml:space="preserve"
+                version="1.1"
+                style="
+                  shape-rendering: geometricPrecision;
+                  text-rendering: geometricPrecision;
+                  image-rendering: optimizeQuality;
+                  fill-rule: evenodd;
+                  clip-rule: evenodd;
+                "
+                viewBox="0 0 784.11 815.53"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <defs></defs>
+                <g id="Layer_x0020_1">
+                  <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                  <path
+                    class="fil0"
+                    d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                  ></path>
+                </g>
+              </svg>
+            </div>
+            <div class="star-6">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xml:space="preserve"
+                version="1.1"
+                style="
+                  shape-rendering: geometricPrecision;
+                  text-rendering: geometricPrecision;
+                  image-rendering: optimizeQuality;
+                  fill-rule: evenodd;
+                  clip-rule: evenodd;
+                "
+                viewBox="0 0 784.11 815.53"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <defs></defs>
+                <g id="Layer_x0020_1">
+                  <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                  <path
+                    class="fil0"
+                    d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                  ></path>
+                </g>
+              </svg>
+            </div>
+
+            <div class="wrapper">
+              <span>DIGITAL</span>
+              <div class="circle circle-12"></div>
+              <div class="circle circle-11"></div>
+              <div class="circle circle-10"></div>
+              <div class="circle circle-9"></div>
+              <div class="circle circle-8"></div>
+              <div class="circle circle-7"></div>
+              <div class="circle circle-6"></div>
+              <div class="circle circle-5"></div>
+              <div class="circle circle-4"></div>
+              <div class="circle circle-3"></div>
+              <div class="circle circle-2"></div>
+              <div class="circle circle-1"></div>
+            </div>
+          </button>
+          <div class="toggle-container">
+            <button class="toggle-btn">
+              <svg
+                class="toggle-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="1" />
+                <circle cx="12" cy="5" r="1" />
+                <circle cx="12" cy="19" r="1" />
+              </svg>
+            </button>
+            <div class="toggle-dropdown">
+              <a href="#">Profile</a>
+              <a href="#">Settings</a>
+              <a href="#">Help</a>
+              <a href="#">Logout</a>
+            </div>
+          </div>
+          <div class="hamburger">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="4" x2="20" y1="12" y2="12" />
+              <line x1="4" x2="20" y1="6" y2="6" />
+              <line x1="4" x2="20" y1="18" y2="18" />
+            </svg>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Hero Section with GST Registration Button -->
+    <div class="relative bg-gray-900 text-white">
+      <div class="absolute inset-0 bg-black opacity-60"></div>
+      <div
+        class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 hero-bg"
+      >
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">
+              GST Registration
+            </h1>
+            <p class="text-lg md:text-xl mb-8">
+              GST registration is mandatory for businesses in India whose
+              revenue exceeds specified thresholds or falls under certain
+              categories requiring GST compliance. We offer seamless assistance
+              to help you obtain your GST registration, ensuring compliance with
+              GST regulations.
+            </p>
+            <button
+              id="gstRegistrationBtn"
+              class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-md text-lg flex items-center transition-all duration-300 transform hover:scale-105"
+            >
+              GST Registration
+              <i data-lucide="arrow-right" class="ml-2 h-5 w-5"></i>
+            </button>
+          </div>
+
+          <!-- Eligibility Checker -->
+          <div class="eligibility-checker">
+            <div class="eligibility-checker-container">
+              <div class="eligibility-checker-header">
+                <i
+                  data-lucide="check-circle"
+                  class="h-6 w-6 text-white mr-2"
+                ></i>
+                <h2 class="text-xl font-semibold text-white">
+                  Check GST Eligibility
+                </h2>
+              </div>
+              <div class="eligibility-checker-content">
+                <p class="text-sm text-gray-600 mb-4">
+                  Find out if your business needs to register for GST based on
+                  your business type and turnover.
+                </p>
+
+                <form id="eligibilityForm" class="space-y-4">
+                  <div>
+                    <label
+                      for="businessType"
+                      class="block text-sm font-medium text-gray-700 mb-1"
+                    >
+                      Business Type
+                    </label>
+                    <select
+                      id="businessType"
+                      class="w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                    >
+                      <option value="">Select Business Type</option>
+                      <option value="regular">Regular Business</option>
+                      <option value="ecommerce">E-commerce Seller</option>
+                      <option value="interstate">Interstate Business</option>
+                      <option value="service">Service Provider</option>
+                      <option value="composition">Composition Scheme</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label
+                      for="annualTurnover"
+                      class="block text-sm font-medium text-gray-700 mb-1"
+                    >
+                      Annual Turnover (₹)
+                    </label>
+                    <select
+                      id="annualTurnover"
+                      class="w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                    >
+                      <option value="">Select Annual Turnover</option>
+                      <option value="below10L">Below ₹10 Lakhs</option>
+                      <option value="10L-20L">₹10 Lakhs - ₹20 Lakhs</option>
+                      <option value="20L-40L">₹20 Lakhs - ₹40 Lakhs</option>
+                      <option value="40L-1.5Cr">₹40 Lakhs - ₹1.5 Crore</option>
+                      <option value="above1.5Cr">Above ₹1.5 Crore</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label
+                      for="state"
+                      class="block text-sm font-medium text-gray-700 mb-1"
+                    >
+                      State
+                    </label>
+                    <select
+                      id="state"
+                      class="w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                    >
+                      <option value="">Select State</option>
+                      <option value="special-AP">Arunachal Pradesh</option>
+                      <option value="special-AS">Assam</option>
+                      <option value="special-JK">Jammu & Kashmir</option>
+                      <option value="special-MN">Manipur</option>
+                      <option value="special-MG">Meghalaya</option>
+                      <option value="special-MZ">Mizoram</option>
+                      <option value="special-NL">Nagaland</option>
+                      <option value="special-SK">Sikkim</option>
+                      <option value="special-TR">Tripura</option>
+                      <option value="special-HP">Himachal Pradesh</option>
+                      <option value="special-UK">Uttarakhand</option>
+                      <option value="regular-AN">
+                        Andaman & Nicobar Islands
+                      </option>
+                      <option value="regular-AP">Andhra Pradesh</option>
+                      <option value="regular-BR">Bihar</option>
+                      <option value="regular-CG">Chhattisgarh</option>
+                      <option value="regular-DL">Delhi</option>
+                      <option value="regular-GA">Goa</option>
+                      <option value="regular-GJ">Gujarat</option>
+                      <option value="regular-HR">Haryana</option>
+                      <option value="regular-JH">Jharkhand</option>
+                      <option value="regular-KA">Karnataka</option>
+                      <option value="regular-KL">Kerala</option>
+                      <option value="regular-MP">Madhya Pradesh</option>
+                      <option value="regular-MH">Maharashtra</option>
+                      <option value="regular-OD">Odisha</option>
+                      <option value="regular-PB">Punjab</option>
+                      <option value="regular-RJ">Rajasthan</option>
+                      <option value="regular-TN">Tamil Nadu</option>
+                      <option value="regular-TG">Telangana</option>
+                      <option value="regular-UP">Uttar Pradesh</option>
+                      <option value="regular-WB">West Bengal</option>
+                      <option value="regular-CH">Chandigarh</option>
+                      <option value="regular-DD">
+                        Dadra & Nagar Haveli and Daman & Diu
+                      </option>
+                      <option value="regular-LD">Lakshadweep</option>
+                      <option value="regular-PY">Puducherry</option>
+                      <option value="regular-LA">Ladakh</option>
+                    </select>
+                  </div>
+
+                  <button
+                    type="button"
+                    id="checkEligibilityBtn"
+                    class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-md transition-colors duration-300 flex items-center justify-center"
+                  >
+                    Check Eligibility
+                    <i data-lucide="arrow-right" class="ml-2 h-4 w-4"></i>
+                  </button>
+                </form>
+
+                <div id="eligibilityResult" class="mt-4 p-4 rounded-md hidden">
+                  <div id="eligibleResult" class="hidden">
+                    <div class="flex items-start">
+                      <i
+                        data-lucide="check-circle"
+                        class="h-5 w-5 text-green-500 mr-2 flex-shrink-0"
+                      ></i>
+                      <div>
+                        <h3 class="text-sm font-medium text-gray-900">
+                          GST Registration Required
+                        </h3>
+                        <p class="text-xs text-gray-600 mt-1">
+                          Based on your inputs, your business needs to register
+                          for GST. Click the GST Registration button to start
+                          the process.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div id="notEligibleResult" class="hidden">
+                    <div class="flex items-start">
+                      <i
+                        data-lucide="info"
+                        class="h-5 w-5 text-blue-500 mr-2 flex-shrink-0"
+                      ></i>
+                      <div>
+                        <h3 class="text-sm font-medium text-gray-900">
+                          GST Registration Optional
+                        </h3>
+                        <p class="text-xs text-gray-600 mt-1">
+                          Based on your inputs, GST registration is optional for
+                          your business. However, registering for GST may still
+                          provide benefits.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div id="mandatoryResult" class="hidden">
+                    <div class="flex items-start">
+                      <i
+                        data-lucide="alert-triangle"
+                        class="h-5 w-5 text-orange-500 mr-2 flex-shrink-0"
+                      ></i>
+                      <div>
+                        <h3 class="text-sm font-medium text-gray-900">
+                          GST Registration Mandatory
+                        </h3>
+                        <p class="text-xs text-gray-600 mt-1">
+                          Based on your inputs, GST registration is mandatory
+                          for your business type regardless of turnover. Please
+                          proceed with registration.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- GST Registration Online Section -->
+    <section class="gst-online-section">
+      <div class="container">
+        <h2 class="section-title">GST Registration Online</h2>
+
+        <div class="features-list">
+          <div class="feature-item">
+            <i class="fa-solid fa-circle-check feature-icon"></i>
+            <p>
+              GST Application Filing in Just <strong>2 Business Days</strong> –
+              Starting at <span class="strike-through">₹749</span>
+              <span class="highlight-price">₹499</span>
+              <a href="#" class="terms-link">T&C*</a>
+            </p>
+          </div>
+
+          <div class="feature-item">
+            <i class="fa-solid fa-circle-check feature-icon"></i>
+            <p>
+              Simplified process for <strong>new GST registration</strong>,
+              <strong>application status tracking</strong>, and
+              <strong>resolving clarifications</strong> with the GST
+              authorities.
+            </p>
+          </div>
+
+          <div class="feature-item">
+            <i class="fa-solid fa-circle-check feature-icon"></i>
+            <p>
+              Tailored GST services for <strong>businesses</strong>,
+              <strong>eCommerce sellers</strong>, <strong>startups</strong>, and
+              <strong>government offices</strong>.
+            </p>
+          </div>
+
+          <div class="feature-item">
+            <i class="fa-solid fa-circle-check feature-icon"></i>
+            <p>
+              Comprehensive GST services, including
+              <strong>CA-assisted online document submission</strong>,
+              <strong>GST return filing</strong>, and
+              <strong>GSTIN procurement</strong>.
+            </p>
+          </div>
+
+          <div class="feature-item">
+            <i class="fa-solid fa-circle-check feature-icon"></i>
+            <p>
+              Expert assistance for <strong>GST e-invoicing</strong>,
+              <strong>ledger management</strong>, and
+              <strong>invoice maintenance</strong> to ensure compliance.
+            </p>
+          </div>
+        </div>
+
+        <div class="documents-needed">
+          <div class="document-header">
+            <i class="fa-solid fa-file-lines document-header-icon"></i>
+            <h3>List of documents needed</h3>
+          </div>
+
+          <ul class="document-list-simple">
+            <li>Certificate of Incorporation</li>
+            <li>PAN card of Company</li>
+            <li>Articles of Association, AOA</li>
+          </ul>
+
+          <button id="view-all-documents" class="view-documents-btn">
+            View all documents <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <!-- Step-by-Step Guide Section -->
+      <div class="step-guide-container mb-12">
+        <div class="step-guide-header">
+          <h2 class="step-guide-title">
+            Step-by-Step Guide For GST Registration Process
+          </h2>
+        </div>
+        <div class="step-guide-content">
+          <p class="step-guide-intro">
+            Here are 4 steps to complete your online GST registration process:
+          </p>
+
+          <div class="relative">
+            <div class="hidden md:block step-connector"></div>
+            <div class="flex flex-col md:flex-row justify-between items-center">
+              <!-- Step 1 -->
+              <div class="step-item flex flex-col items-center mb-6 md:mb-0">
+                <div class="step-icon-container bg-blue-100">
+                  <i
+                    data-lucide="file-input"
+                    class="step-icon text-blue-500"
+                  ></i>
+                </div>
+                <div class="text-center">
+                  <p class="step-number font-semibold">Step 1</p>
+                  <p class="step-description">Get in touch with our experts</p>
+                </div>
+              </div>
+
+              <!-- Arrow -->
+              <div class="hidden md:block step-arrow">
+                <i data-lucide="chevron-right" class="h-6 w-6"></i>
+              </div>
+
+              <!-- Step 2 -->
+              <div class="step-item flex flex-col items-center mb-6 md:mb-0">
+                <div class="step-icon-container bg-yellow-100">
+                  <i
+                    data-lucide="clipboard-list"
+                    class="step-icon text-yellow-500"
+                  ></i>
+                </div>
+                <div class="text-center">
+                  <p class="step-number font-semibold">Step 2</p>
+                  <p class="step-description">Provide Business Information</p>
+                </div>
+              </div>
+
+              <!-- Arrow -->
+              <div class="hidden md:block step-arrow">
+                <i data-lucide="chevron-right" class="h-6 w-6"></i>
+              </div>
+
+              <!-- Step 3 -->
+              <div class="step-item flex flex-col items-center mb-6 md:mb-0">
+                <div class="step-icon-container bg-red-100">
+                  <i
+                    data-lucide="file-plus-2"
+                    class="step-icon text-red-500"
+                  ></i>
+                </div>
+                <div class="text-center">
+                  <p class="step-number font-semibold">Step 3</p>
+                  <p class="step-description">Filing for GST Registration</p>
+                </div>
+              </div>
+
+              <!-- Arrow -->
+              <div class="hidden md:block step-arrow">
+                <i data-lucide="chevron-right" class="h-6 w-6"></i>
+              </div>
+
+              <!-- Step 4 -->
+              <div class="step-item flex flex-col items-center">
+                <div class="step-icon-container bg-green-100">
+                  <i
+                    data-lucide="file-check"
+                    class="step-icon text-green-500"
+                  ></i>
+                </div>
+                <div class="text-center">
+                  <p class="step-number font-semibold">Step 4</p>
+                  <p class="step-description">Get your GSTIN</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Document Popup Modal -->
+    <div id="document-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+
+        <div class="tabs-container">
+          <div class="tabs">
+            <button class="tab-btn active" data-tab="private">
+              Private Limited Company
+            </button>
+            <button class="tab-btn" data-tab="llp">LLP</button>
+            <button class="tab-btn" data-tab="individual">
+              Individual/Proprietorship
+            </button>
+          </div>
+
+          <div class="tab-content active" id="private-tab">
+            <ul class="document-list-detailed">
+              <li>Certificate of Incorporation</li>
+              <li>PAN card of Company</li>
+              <li>Articles of Association, AOA</li>
+              <li>Memorandum of Association, MOA</li>
+              <li>Resolution signed by board members</li>
+              <li>Identity and address proof of directors</li>
+              <li>Digital Signature</li>
+              <li>Director's Proof (Any 2 from the below)</li>
+            </ul>
+          </div>
+
+          <div class="tab-content" id="llp-tab">
+            <ul class="document-list-detailed">
+              <li>PAN Card of LLP</li>
+              <li>LLP Agreement</li>
+              <li>Partners' names and address proof</li>
+              <li>Director's Proof (Any 2 from the below)</li>
+            </ul>
+          </div>
+
+          <div class="tab-content" id="individual-tab">
+            <ul class="document-list-detailed">
+              <li>PAN Card</li>
+              <li>Address proof of proprietor</li>
+            </ul>
+          </div>
+
+          <div class="director-proof-section">
+            <h4>
+              Director's Proof (Any 2 to be shown as proof of address of a
+              director)
+            </h4>
+
+            <div class="director-proof-columns">
+              <ul class="director-proof-list">
+                <li>Telephone or Electricity Bill</li>
+                <li>Bank Account Statement</li>
+                <li>Passport</li>
+                <li>Aadhar Card</li>
+              </ul>
+
+              <ul class="director-proof-list">
+                <li>Driving License</li>
+                <li>Ration Card</li>
+                <li>Voter Identity Card</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main class="container">
+      <!-- GST Registration Form Section -->
+      <div id="registration-form" class="form-container">
+        <!-- Progress Indicator -->
+        <div class="form-header">
+          <h2>GST Registration Application</h2>
+          <div class="progress-container">
+            <span id="step-indicator">Step 1 of 3</span>
+            <div class="progress-bar">
+              <div class="progress-step active" data-step="1"></div>
+              <div class="progress-step" data-step="2"></div>
+              <div class="progress-step" data-step="3"></div>
+            </div>
+          </div>
+        </div>
+
+        <form id="gst-form">
+          <!-- Step 1: Business Information -->
+          <div class="form-step" id="step-1">
+            <h3>Business Information</h3>
+            <p class="form-description">
+              Please provide your business details for GST registration.
+            </p>
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="businessName">Business Name</label>
+                <div class="input-icon-wrapper">
+                  <i class="fa-solid fa-building input-icon"></i>
+                  <input
+                    type="text"
+                    id="businessName"
+                    name="businessName"
+                    placeholder="Your Business Name"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="businessType">Business Type</label>
+                <div class="input-icon-wrapper">
+                  <i class="fa-solid fa-building-columns input-icon"></i>
+                  <select id="businessType" name="businessType" required>
+                    <option value="">Select Business Type</option>
+                    <option value="Proprietorship">Proprietorship</option>
+                    <option value="Partnership">Partnership</option>
+                    <option value="LLP">Limited Liability Partnership</option>
+                    <option value="Private Limited">
+                      Private Limited Company
+                    </option>
+                    <option value="Public Limited">
+                      Public Limited Company
+                    </option>
+                    <option value="HUF">Hindu Undivided Family (HUF)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="pan">PAN Number</label>
+                <div class="input-icon-wrapper">
+                  <i class="fa-solid fa-credit-card input-icon"></i>
+                  <input
+                    type="text"
+                    id="pan"
+                    name="pan"
+                    placeholder="ABCDE1234F"
+                    required
+                    maxlength="10"
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="incorporationDate"
+                  >Date of Incorporation/Registration</label
+                >
+                <div class="input-icon-wrapper">
+                  <i class="fa-solid fa-calendar input-icon"></i>
+                  <input
+                    type="date"
+                    id="incorporationDate"
+                    name="incorporationDate"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2: Contact Information -->
+          <div class="form-step hidden" id="step-2">
+            <h3>Contact Information</h3>
+            <p class="form-description">
+              Please provide your contact details for communication.
+            </p>
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <div class="input-icon-wrapper">
+                  <i class="fa-solid fa-envelope input-icon"></i>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="you@example.com"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <div class="input-icon-wrapper">
+                  <i class="fa-solid fa-phone input-icon"></i>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="+91 9876543210"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-group full-width">
+                <label for="address">Business Address</label>
+                <div class="input-icon-wrapper">
+                  <i class="fa-solid fa-location-dot input-icon"></i>
+                  <input
+                    type="text"
+                    id="address"
+                    name="address"
+                    placeholder="Street Address"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" id="city" name="city" required />
+              </div>
+
+              <div class="form-group">
+                <label for="state">State</label>
+                <select id="state" name="state" required>
+                  <option value="">Select State</option>
+                  <option value="Andhra Pradesh">Andhra Pradesh</option>
+                  <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                  <option value="Assam">Assam</option>
+                  <option value="Bihar">Bihar</option>
+                  <option value="Chhattisgarh">Chhattisgarh</option>
+                  <option value="Goa">Goa</option>
+                  <option value="Gujarat">Gujarat</option>
+                  <option value="Haryana">Haryana</option>
+                  <option value="Himachal Pradesh">Himachal Pradesh</option>
+                  <option value="Jharkhand">Jharkhand</option>
+                  <option value="Karnataka">Karnataka</option>
+                  <option value="Kerala">Kerala</option>
+                  <option value="Madhya Pradesh">Madhya Pradesh</option>
+                  <option value="Maharashtra">Maharashtra</option>
+                  <option value="Manipur">Manipur</option>
+                  <option value="Meghalaya">Meghalaya</option>
+                  <option value="Mizoram">Mizoram</option>
+                  <option value="Nagaland">Nagaland</option>
+                  <option value="Odisha">Odisha</option>
+                  <option value="Punjab">Punjab</option>
+                  <option value="Rajasthan">Rajasthan</option>
+                  <option value="Sikkim">Sikkim</option>
+                  <option value="Tamil Nadu">Tamil Nadu</option>
+                  <option value="Telangana">Telangana</option>
+                  <option value="Tripura">Tripura</option>
+                  <option value="Uttar Pradesh">Uttar Pradesh</option>
+                  <option value="Uttarakhand">Uttarakhand</option>
+                  <option value="West Bengal">West Bengal</option>
+                  <option value="Delhi">Delhi</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="pincode">PIN Code</label>
+                <input
+                  type="text"
+                  id="pincode"
+                  name="pincode"
+                  placeholder="123456"
+                  maxlength="6"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3: Business Details & Verification -->
+          <div class="form-step hidden" id="step-3">
+            <h3>Business Details & Verification</h3>
+            <p class="form-description">
+              Please provide additional business details and verify your
+              information.
+            </p>
+
+            <div class="form-section">
+              <div class="form-group">
+                <label for="turnover">Estimated Annual Turnover (in ₹)</label>
+                <select id="turnover" name="turnover" required>
+                  <option value="">Select Turnover Range</option>
+                  <option value="0-20L">Up to ₹20 Lakhs</option>
+                  <option value="20L-50L">₹20 Lakhs - ₹50 Lakhs</option>
+                  <option value="50L-1Cr">₹50 Lakhs - ₹1 Crore</option>
+                  <option value="1Cr-5Cr">₹1 Crore - ₹5 Crore</option>
+                  <option value="5Cr-10Cr">₹5 Crore - ₹10 Crore</option>
+                  <option value="10Cr+">Above ₹10 Crore</option>
+                </select>
+              </div>
+
+              <div class="document-section">
+                <h4>Required Documents</h4>
+                <ul class="document-list">
+                  <li>
+                    <i class="fa-solid fa-circle-check document-icon"></i>
+                    <span>PAN Card of the Business Entity</span>
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-circle-check document-icon"></i>
+                    <span>Aadhar Card of Proprietor/Partners/Directors</span>
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-circle-check document-icon"></i>
+                    <span
+                      >Business Registration Document (Partnership
+                      Deed/MOA/AOA/Certificate of Incorporation)</span
+                    >
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-circle-check document-icon"></i>
+                    <span
+                      >Proof of Business Address (Electricity Bill/Rent
+                      Agreement/Property Tax Receipt)</span
+                    >
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-circle-check document-icon"></i>
+                    <span>Bank Account Details with Cancelled Cheque</span>
+                  </li>
+                </ul>
+                <p class="document-note">
+                  Note: You will be required to upload these documents after
+                  submission of this form.
+                </p>
+              </div>
+
+              <div class="terms-container">
+                <div class="checkbox-wrapper">
+                  <input
+                    type="checkbox"
+                    id="agreeTerms"
+                    name="agreeTerms"
+                    required
+                  />
+                </div>
+                <div class="terms-text">
+                  <label for="agreeTerms"
+                    >I agree to the terms and conditions</label
+                  >
+                  <p>
+                    I hereby declare that all the information provided is true
+                    and correct to the best of my knowledge. I understand that
+                    providing false information may result in rejection of my
+                    application.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-navigation">
+            <button
+              type="button"
+              id="prev-btn"
+              class="btn btn-secondary hidden"
+            >
+              Previous
+            </button>
+            <button type="button" id="next-btn" class="btn btn-primary">
+              Next <i class="fa-solid fa-chevron-right"></i>
+            </button>
+            <button
+              type="submit"
+              id="submit-btn"
+              class="btn btn-success hidden"
+            >
+              Submit Application
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Benefits Section -->
+      <div class="benefits-container">
+        <div class="benefits-header">
+          <h2>Benefits of GST Registration</h2>
+        </div>
+        <div class="benefits-grid">
+          <div class="benefit-item">
+            <i class="fa-solid fa-circle-check benefit-icon"></i>
+            <div>
+              <h3>Legal Recognition</h3>
+              <p>
+                Get legal recognition for your business and build credibility
+                with customers and suppliers.
+              </p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <i class="fa-solid fa-circle-check benefit-icon"></i>
+            <div>
+              <h3>Input Tax Credit</h3>
+              <p>
+                Claim input tax credit on purchases, reducing your overall tax
+                burden.
+              </p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <i class="fa-solid fa-circle-check benefit-icon"></i>
+            <div>
+              <h3>Seamless Interstate Business</h3>
+              <p>
+                Conduct business across state borders without additional
+                complications.
+              </p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <i class="fa-solid fa-circle-check benefit-icon"></i>
+            <div>
+              <h3>Enhanced Business Opportunities</h3>
+              <p>
+                Access to larger businesses that prefer to work with
+                GST-registered vendors.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Sticky Navigation -->
+    <nav id="stickyNav" class="sticky-nav">
+      <div class="container">
+        <div class="nav-links">
+          <button class="nav-link active" data-section="overview">
+            Overview
+          </button>
+          <button class="nav-link" data-section="definition">Definition</button>
+          <button class="nav-link" data-section="eligibility">
+            Eligibility
+          </button>
+          <button class="nav-link" data-section="documents">
+            Documents Required
+          </button>
+          <button class="nav-link" data-section="benefits">Benefits</button>
+          <button class="nav-link" data-section="process">
+            Registration Process
+          </button>
+          <button class="nav-link" data-section="compliance">
+            Compliance Requirements
+          </button>
+          <button class="nav-link" data-section="why">Why IndiaCertify?</button>
+          <button class="nav-link" data-section="faqs">FAQs</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Content Sections -->
+    <div class="container">
+      <section id="overview" class="content-section">
+        <h2>Shop and Establishment Certificate - An Overview</h2>
+        <p>
+          The Shop and Establishment License, also known as the Shop License or
+          Gumasta License registration, is a mandatory legal document for
+          businesses operating in India, including private limited companies,
+          retail shops, and service providers. Issued by the respective state
+          authority under the Shops and Establishments Act, this certificate
+          ensures businesses comply with key labor laws, including working
+          hours, employee rights, and workplace conditions.
+        </p>
+        <p>
+          The Establishment Act Registration must be completed to ensure
+          adherence to the regulations governing the employment of children,
+          working conditions, and regulation of employment. The registration
+          process involves submitting necessary documents such as the PAN card,
+          address proof, and an application form, all of which are critical to
+          legally operate within the state.
+        </p>
+      </section>
+
+      <section id="definition" class="content-section">
+        <h2>Definition</h2>
+        <p>
+          A Shop and Establishment Certificate is a legal document that
+          registers commercial establishments with the Labor Department of the
+          respective state government. This registration is mandatory under the
+          Shops and Establishments Act, which regulates the working conditions
+          of workers employed in shops and commercial establishments.
+        </p>
+      </section>
+
+      <section id="eligibility" class="content-section">
+        <h2>Eligibility</h2>
+        <ul>
+          <li>
+            All commercial establishments, shops, restaurants, and other
+            businesses
+          </li>
+          <li>Businesses with employees working on their premises</li>
+          <li>Retail and wholesale shops</li>
+          <li>Hotels and restaurants</li>
+          <li>Private offices and banks</li>
+          <li>Places of amusement and entertainment</li>
+        </ul>
+      </section>
+
+      <section id="documents" class="content-section">
+        <h2>Documents Required</h2>
+        <div class="document-groups">
+          <div class="document-group">
+            <h3>Basic Documents</h3>
+            <ul>
+              <li>Proof of business ownership or rent agreement</li>
+              <li>PAN card of the business and proprietor</li>
+              <li>Aadhaar card of the proprietor</li>
+              <li>Passport size photographs</li>
+              <li>Business registration certificate</li>
+            </ul>
+          </div>
+          <div class="document-group">
+            <h3>Additional Documents</h3>
+            <ul>
+              <li>NOC from the property owner (if rented)</li>
+              <li>Partnership deed (for partnership firms)</li>
+              <li>Certificate of Incorporation (for companies)</li>
+              <li>Fire safety certificate (if applicable)</li>
+              <li>GST registration (if applicable)</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="benefits" class="content-section">
+        <h2>Benefits</h2>
+        <div class="benefits-grid">
+          <div class="benefit-group">
+            <h3>Legal Compliance</h3>
+            <ul>
+              <li>Ensures compliance with labor laws</li>
+              <li>Protects against legal penalties</li>
+              <li>Demonstrates business legitimacy</li>
+            </ul>
+          </div>
+          <div class="benefit-group">
+            <h3>Business Growth</h3>
+            <ul>
+              <li>Easier access to business loans</li>
+              <li>Enhanced credibility with customers</li>
+              <li>Simplified business expansion</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="process" class="content-section">
+        <h2>Registration Process</h2>
+        <div class="process-steps">
+          <h3>Step-by-Step Guide</h3>
+          <ol>
+            <li>
+              <strong>Document Collection</strong>
+              <p>
+                Gather all required documents including identity proof, business
+                proof, and premises documents.
+              </p>
+            </li>
+            <li>
+              <strong>Application Submission</strong>
+              <p>
+                Submit the application form along with necessary documents to
+                the Labor Department.
+              </p>
+            </li>
+            <li>
+              <strong>Verification Process</strong>
+              <p>
+                Officials verify the submitted documents and may conduct
+                premises inspection.
+              </p>
+            </li>
+            <li>
+              <strong>Certificate Issuance</strong>
+              <p>
+                Upon successful verification, the Shop and Establishment
+                Certificate is issued.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="compliance" class="content-section">
+        <h2>Compliance Requirements</h2>
+        <div class="compliance-groups">
+          <div class="compliance-group">
+            <h3>Regular Compliance</h3>
+            <ul>
+              <li>Display of certificate at a prominent location</li>
+              <li>Maintenance of employee records</li>
+              <li>Adherence to working hours regulations</li>
+              <li>Regular renewal of certificate</li>
+            </ul>
+          </div>
+          <div class="compliance-group">
+            <h3>Annual Requirements</h3>
+            <ul>
+              <li>Annual returns filing</li>
+              <li>Update of employee information</li>
+              <li>Renewal of certifications</li>
+              <li>Compliance with labor law amendments</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="why" class="content-section">
+        <h2>Why IndiaCertify?</h2>
+        <div class="why-grid">
+          <div class="why-card">
+            <h3>Expert Assistance</h3>
+            <ul>
+              <li>Dedicated legal experts</li>
+              <li>End-to-end support</li>
+              <li>Quick resolution of queries</li>
+            </ul>
+          </div>
+          <div class="why-card">
+            <h3>Hassle-free Process</h3>
+            <ul>
+              <li>Online documentation</li>
+              <li>Regular status updates</li>
+              <li>Minimal paperwork</li>
+            </ul>
+          </div>
+          <div class="why-card">
+            <h3>Value for Money</h3>
+            <ul>
+              <li>Competitive pricing</li>
+              <li>Transparent process</li>
+              <li>No hidden charges</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="faqs" class="content-section">
+        <h2>FAQs</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <h3>How long does it take to get the certificate?</h3>
+            <p>
+              The process typically takes 15-30 working days, depending on the
+              state and documentation completeness.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>Is the certificate valid pan-India?</h3>
+            <p>
+              No, the certificate is state-specific. You need separate
+              registrations for different states.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>What is the validity period?</h3>
+            <p>
+              The validity varies by state, typically ranging from 1 to 5 years,
+              after which renewal is required.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>Can I apply online?</h3>
+            <p>
+              Yes, many states now offer online application facilities through
+              their respective portals.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+    <style>
+      /* Base Styles */
+      :root {
+        --primary-color: #4f46e5;
+        --primary-dark: #4338ca;
+        --primary-light: #e0e7ff;
+        --secondary-color: #f97316;
+        --secondary-hover: #ea580c;
+        --success-color: #16a34a;
+        --success-hover: #15803d;
+        --text-dark: #1f2937;
+        --text-medium: #4b5563;
+        --text-light: #9ca3af;
+        --white: #ffffff;
+        --gray-50: #f9fafb;
+        --gray-100: #f3f4f6;
+        --gray-200: #e5e7eb;
+        --gray-300: #d1d5db;
+        --gray-800: #1f2937;
+        --gray-900: #111827;
+        --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
+          0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        --border-radius: 0.375rem;
+        --gradient-primary: linear-gradient(135deg, #4f46e5, #6366f1);
+        --gradient-secondary: linear-gradient(135deg, #f97316, #fb923c);
+        --gradient-success: linear-gradient(135deg, #16a34a, #22c55e);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
+        line-height: 1.5;
+        color: var(--text-dark);
+        background: linear-gradient(to bottom right, #ebf4ff, #e0e7ff);
+        min-height: 100vh;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-weight: 600;
+        line-height: 1.25;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      /* Button Styles */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.75rem 1.5rem;
+        font-weight: 600;
+        border-radius: var(--border-radius);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: none;
+        font-size: 1rem;
+      }
+
+      .btn i {
+        margin-left: 0.5rem;
+      }
+
+      .btn-primary {
+        background: var(--gradient-secondary);
+        color: var(--white);
+        box-shadow: 0 4px 6px rgba(249, 115, 22, 0.25);
+      }
+
+      .btn-primary:hover {
+        background-color: var(--secondary-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(249, 115, 22, 0.3);
+      }
+
+      .btn-secondary {
+        background-color: var(--white);
+        color: var(--text-dark);
+        border: 1px solid var(--gray-300);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      }
+
+      .btn-secondary:hover {
+        background-color: var(--gray-100);
+        transform: translateY(-1px);
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+      }
+
+      .btn-success {
+        background: var(--gradient-success);
+        color: var(--white);
+        box-shadow: 0 4px 6px rgba(22, 163, 74, 0.25);
+      }
+
+      .btn-success:hover {
+        background-color: var(--success-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(22, 163, 74, 0.3);
+      }
+
+      /* Header Styles */
+      .header {
+        background-color: var(--white);
+        box-shadow: var(--shadow);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo-icon {
+        font-size: 1.5rem;
+        color: var(--primary-color);
+        margin-right: 0.5rem;
+      }
+
+      .logo h1 {
+        font-size: 1.5rem;
+        color: var(--text-dark);
+      }
+
+      .nav {
+        display: none;
+      }
+
+      .nav-link {
+        margin-left: 1rem;
+        color: var(--text-medium);
+        transition: color 0.3s ease;
+      }
+
+      .nav-link:hover {
+        color: var(--primary-color);
+      }
+
+      /* Hero Section */
+      .hero {
+        text-align: left;
+        color: var(--white);
+        background-color: var(--gray-900);
+        padding: 4rem 0;
+        /* background-image: url("https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80"); */
+        background-size: cover;
+        background-position: center;
+        background-blend-mode: overlay;
+      }
+
+      .hero-overlay {
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 800px;
+        padding: 2rem 1rem;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .hero p {
+        font-size: 1.125rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+      }
+      .min-h-screen {
+        min-height: 100vh;
+      }
+
+      .bg-gradient-to-br {
+        background-image: linear-gradient(
+          to bottom right,
+          var(--tw-gradient-stops)
+        );
+      }
+
+      .from-blue-50 {
+        --tw-gradient-stops: #eff6ff,
+          var(--tw-gradient-to, rgb(239 246 255 / 0));
+      }
+
+      .to-indigo-50 {
+        --tw-gradient-to: #eef2ff;
+      }
+
+      .bg-white {
+        background-color: #ffffff;
+      }
+
+      .bg-gray-900 {
+        background-color: #111827;
+      }
+
+      .bg-black {
+        background-color: #000000;
+      }
+
+      .bg-indigo-600 {
+        background-color: #4f46e5;
+      }
+
+      .bg-orange-500 {
+        background-color: #f97316;
+      }
+
+      .bg-gray-50 {
+        background-color: #f9fafb;
+      }
+
+      .bg-gray-800 {
+        background-color: #1f2937;
+      }
+
+      .bg-blue-100 {
+        background-color: #dbeafe;
+      }
+
+      .bg-yellow-100 {
+        background-color: #fef9c3;
+      }
+
+      .bg-red-100 {
+        background-color: #fee2e2;
+      }
+
+      .bg-green-100 {
+        background-color: #dcfce7;
+      }
+
+      .hover\:bg-orange-600:hover {
+        background-color: #ea580c;
+      }
+
+      .hover\:bg-indigo-700:hover {
+        background-color: #4338ca;
+      }
+
+      .hover\:bg-gray-50:hover {
+        background-color: #f9fafb;
+      }
+
+      .hover\:bg-green-700:hover {
+        background-color: #15803d;
+      }
+
+      .text-white {
+        color: #ffffff;
+      }
+
+      .text-gray-900 {
+        color: #111827;
+      }
+
+      .text-gray-600 {
+        color: #4b5563;
+      }
+
+      .text-gray-700 {
+        color: #374151;
+      }
+
+      .text-gray-400 {
+        color: #9ca3af;
+      }
+
+      .text-gray-800 {
+        color: #1f2937;
+      }
+
+      .text-gray-300 {
+        color: #d1d5db;
+      }
+
+      .text-gray-500 {
+        color: #6b7280;
+      }
+
+      .text-indigo-600 {
+        color: #4f46e5;
+      }
+
+      .text-blue-500 {
+        color: #3b82f6;
+      }
+
+      .text-yellow-500 {
+        color: #eab308;
+      }
+
+      .text-red-500 {
+        color: #ef4444;
+      }
+
+      .text-green-500 {
+        color: #22c55e;
+      }
+
+      .hover\:text-indigo-600:hover {
+        color: #4f46e5;
+      }
+
+      .hover\:text-white:hover {
+        color: #ffffff;
+      }
+
+      .shadow-sm {
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      }
+
+      .shadow-lg {
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      }
+
+      .shadow-md {
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      }
+
+      .rounded-lg {
+        border-radius: 0.5rem;
+      }
+
+      .rounded-md {
+        border-radius: 0.375rem;
+      }
+
+      .rounded-full {
+        border-radius: 9999px;
+      }
+
+      .rounded {
+        border-radius: 0.25rem;
+      }
+
+      .border {
+        border-width: 1px;
+      }
+
+      .border-t {
+        border-top-width: 1px;
+      }
+
+      .border-gray-300 {
+        border-color: #d1d5db;
+      }
+
+      .border-gray-200 {
+        border-color: #e5e7eb;
+      }
+
+      .border-gray-700 {
+        border-color: #374151;
+      }
+
+      .border-transparent {
+        border-color: transparent;
+      }
+
+      .focus\:border-indigo-500:focus {
+        border-color: #6366f1;
+      }
+
+      .focus\:ring-indigo-500:focus {
+        --tw-ring-color: #6366f1;
+      }
+
+      .focus\:ring-offset-2:focus {
+        --tw-ring-offset-width: 2px;
+      }
+
+      .focus\:ring-2:focus {
+        --tw-ring-width: 2px;
+      }
+
+      .focus\:outline-none:focus {
+        outline: 2px solid transparent;
+        outline-offset: 2px;
+      }
+
+      .focus\:ring-green-500:focus {
+        --tw-ring-color: #22c55e;
+      }
+
+      .font-bold {
+        font-weight: 700;
+      }
+
+      .font-semibold {
+        font-weight: 600;
+      }
+
+      .font-medium {
+        font-weight: 500;
+      }
+
+      .text-2xl {
+        font-size: 1.5rem;
+        line-height: 2rem;
+      }
+
+      .text-sm {
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+      }
+
+      .text-4xl {
+        font-size: 2.25rem;
+        line-height: 2.5rem;
+      }
+
+      .text-lg {
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+      }
+
+      .text-xl {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+      }
+
+      .text-md {
+        font-size: 1rem;
+        line-height: 1.5rem;
+      }
+
+      .text-xs {
+        font-size: 0.75rem;
+        line-height: 1rem;
+      }
+
+      .py-4 {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+      }
+
+      .px-4 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      .py-24 {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+      }
+
+      .py-10 {
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+      }
+
+      .px-6 {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+
+      .py-8 {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+      }
+
+      .py-2 {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+      }
+
+      .px-3 {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+      }
+
+      .py-3 {
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+      }
+
+      .px-8 {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+
+      .pt-5 {
+        padding-top: 1.25rem;
+      }
+
+      .pt-8 {
+        padding-top: 2rem;
+      }
+
+      .pl-10 {
+        padding-left: 2.5rem;
+      }
+
+      .pl-3 {
+        padding-left: 0.75rem;
+      }
+
+      .p-6 {
+        padding: 1.5rem;
+      }
+
+      .p-4 {
+        padding: 1rem;
+      }
+
+      .p-8 {
+        padding: 2rem;
+      }
+
+      .m-0 {
+        margin: 0;
+      }
+
+      .mx-auto {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .mb-6 {
+        margin-bottom: 1.5rem;
+      }
+
+      .mb-8 {
+        margin-bottom: 2rem;
+      }
+
+      .mb-12 {
+        margin-bottom: 3rem;
+      }
+
+      .mb-3 {
+        margin-bottom: 0.75rem;
+      }
+
+      .mb-4 {
+        margin-bottom: 1rem;
+      }
+
+      .mt-12 {
+        margin-top: 3rem;
+      }
+
+      .mt-8 {
+        margin-top: 2rem;
+      }
+
+      .mt-1 {
+        margin-top: 0.25rem;
+      }
+
+      .mt-3 {
+        margin-top: 0.75rem;
+      }
+
+      .ml-2 {
+        margin-left: 0.5rem;
+      }
+
+      .ml-3 {
+        margin-left: 0.75rem;
+      }
+
+      .ml-1 {
+        margin-left: 0.25rem;
+      }
+
+      .ml-4 {
+        margin-left: 1rem;
+      }
+
+      .mr-2 {
+        margin-right: 0.5rem;
+      }
+
+      .mr-3 {
+        margin-right: 0.75rem;
+      }
+
+      .space-x-4 > * + * {
+        margin-left: 1rem;
+      }
+
+      .space-y-6 > * + * {
+        margin-top: 1.5rem;
+      }
+
+      .space-y-2 > * + * {
+        margin-top: 0.5rem;
+      }
+
+      .space-x-1 > * + * {
+        margin-left: 0.25rem;
+      }
+
+      .gap-6 {
+        gap: 1.5rem;
+      }
+
+      .gap-8 {
+        gap: 2rem;
+      }
+
+      .gap-12 {
+        gap: 3rem;
+      }
+
+      .flex {
+        display: flex;
+      }
+
+      .grid {
+        display: grid;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .flex-col {
+        flex-direction: column;
+      }
+
+      .items-center {
+        align-items: center;
+      }
+
+      .items-start {
+        align-items: flex-start;
+      }
+
+      .justify-between {
+        justify-content: space-between;
+      }
+
+      .justify-center {
+        justify-content: center;
+      }
+
+      .flex-shrink-0 {
+        flex-shrink: 0;
+      }
+
+      .grid-cols-1 {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+      }
+
+      .w-full {
+        width: 100%;
+      }
+
+      .w-8 {
+        width: 2rem;
+      }
+
+      .w-5 {
+        width: 1.25rem;
+      }
+
+      .w-4 {
+        width: 1rem;
+      }
+
+      .w-6 {
+        width: 1.5rem;
+      }
+
+      .w-16 {
+        width: 4rem;
+      }
+
+      .h-8 {
+        height: 2rem;
+      }
+
+      .h-5 {
+        height: 1.25rem;
+      }
+
+      .h-4 {
+        height: 1rem;
+      }
+
+      .h-6 {
+        height: 1.5rem;
+      }
+
+      .h-2 {
+        height: 0.5rem;
+      }
+
+      .h-16 {
+        height: 4rem;
+      }
+
+      .max-w-7xl {
+        max-width: 80rem;
+      }
+
+      .max-w-3xl {
+        max-width: 48rem;
+      }
+
+      .max-w-4xl {
+        max-width: 56rem;
+      }
+
+      .relative {
+        position: relative;
+      }
+
+      .absolute {
+        position: absolute;
+      }
+
+      .inset-0 {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+
+      .inset-y-0 {
+        top: 0;
+        bottom: 0;
+      }
+
+      .left-0 {
+        left: 0;
+      }
+
+      .opacity-60 {
+        opacity: 0.6;
+      }
+
+      .opacity-0 {
+        opacity: 0;
+      }
+
+      .opacity-100 {
+        opacity: 1;
+      }
+
+      .pointer-events-none {
+        pointer-events: none;
+      }
+
+      .overflow-hidden {
+        overflow: hidden;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .transition-all {
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+      }
+
+      .duration-300 {
+        transition-duration: 300ms;
+      }
+
+      .duration-500 {
+        transition-duration: 500ms;
+      }
+
+      .transform {
+        transform: translateX(var(--tw-translate-x))
+          translateY(var(--tw-translate-y)) rotate(var(--tw-rotate))
+          skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+          scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+      }
+
+      .hover\:scale-105:hover {
+        --tw-scale-x: 1.05;
+        --tw-scale-y: 1.05;
+      }
+
+      .invisible {
+        visibility: hidden;
+      }
+      /* Step indicators */
+      .step-indicator {
+        background-color: #818cf8; /* bg-indigo-400 */
+      }
+
+      .step-indicator.active {
+        background-color: #ffffff; /* bg-white */
+      }
+
+      /* Enhanced Step-by-Step Guide Section */
+      .step-guide-container {
+        background: linear-gradient(135deg, #f0f4ff 0%, #e6eeff 100%);
+        border-radius: 0.75rem;
+        box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.1),
+          0 8px 10px -6px rgba(59, 130, 246, 0.05);
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .step-guide-container:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.15),
+          0 10px 10px -5px rgba(59, 130, 246, 0.1);
+      }
+
+      .step-guide-header {
+        background: linear-gradient(90deg, #4f46e5 0%, #6366f1 100%);
+        padding: 1.25rem 1.5rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .step-guide-header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+        opacity: 0.3;
+      }
+
+      .step-guide-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: white;
+        position: relative;
+        z-index: 1;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .step-guide-content {
+        padding: 2rem;
+      }
+
+      .step-guide-intro {
+        color: #4b5563;
+        font-size: 1.125rem;
+        margin-bottom: 2rem;
+        text-align: center;
+      }
+
+      .step-item {
+        position: relative;
+      }
+
+      .step-item:hover .step-icon-container {
+        transform: scale(1.1);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      }
+
+      .step-icon-container {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 9999px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+        transition: all 0.3s ease;
+        position: relative;
+        z-index: 1;
+      }
+
+      .step-icon-container::after {
+        content: "";
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        bottom: -5px;
+        left: -5px;
+        border-radius: 9999px;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.8),
+          rgba(255, 255, 255, 0.2)
+        );
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .step-item:hover .step-icon-container::after {
+        opacity: 1;
+      }
+
+      .step-icon {
+        height: 2rem;
+        width: 2rem;
+      }
+
+      .step-number {
+        font-weight: 700;
+        color: #1f2937;
+        margin-bottom: 0.25rem;
+      }
+
+      .step-description {
+        color: #6b7280;
+        font-size: 0.875rem;
+      }
+
+      .step-arrow {
+        color: #d1d5db;
+        transition: color 0.3s ease;
+      }
+
+      .step-item:hover + .step-arrow {
+        color: #9ca3af;
+      }
+
+      .step-connector {
+        position: absolute;
+        top: 2rem;
+        left: 4rem;
+        right: 4rem;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          #dbeafe 0%,
+          #bfdbfe 50%,
+          #dbeafe 100%
+        );
+        z-index: 0;
+      }
+
+      @media (max-width: 768px) {
+        .step-connector {
+          display: none;
+        }
+      }
+
+      /* Enhanced Eligibility Checker Styles */
+      .eligibility-checker {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .eligibility-checker-container {
+        background: linear-gradient(135deg, #ffffff, #f8fafc);
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12),
+          0 1px 2px rgba(0, 0, 0, 0.08);
+        width: 100%;
+        max-width: 450px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        position: relative;
+      }
+
+      .eligibility-checker-container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 6px;
+        background: linear-gradient(90deg, #6366f1, #8b5cf6, #d946ef);
+        z-index: 1;
+      }
+
+      .eligibility-checker-header {
+        background: linear-gradient(90deg, #4338ca 0%, #4f46e5 100%);
+        padding: 1.25rem 1.5rem;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .eligibility-checker-header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+        opacity: 0.3;
+      }
+
+      .eligibility-checker-content {
+        padding: 1.75rem;
+        background-color: #ffffff;
+      }
+
+      #eligibilityForm .w-full {
+        border-radius: 10px;
+        border: 1px solid #e5e7eb;
+        padding: 12px 16px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        transition: all 0.2s ease;
+        background-color: #f9fafb;
+        font-size: 0.95rem;
+        color: #374151;
+      }
+
+      #eligibilityForm .w-full:focus {
+        border-color: #6366f1;
+        box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+        outline: none;
+        background-color: #ffffff;
+      }
+
+      #eligibilityForm .w-full:hover {
+        border-color: #d1d5db;
+        background-color: #f8fafc;
+      }
+
+      #eligibilityForm label {
+        font-weight: 600;
+        color: #4b5563;
+        margin-bottom: 8px;
+        display: inline-block;
+        font-size: 0.9rem;
+        letter-spacing: 0.025em;
+      }
+
+      #checkEligibilityBtn {
+        background: linear-gradient(135deg, #4f46e5, #6366f1, #818cf8);
+        color: white;
+        font-weight: 600;
+        padding: 12px 20px;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+        transition: all 0.3s ease;
+        letter-spacing: 0.025em;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+      }
+
+      #checkEligibilityBtn:hover {
+        background: linear-gradient(135deg, #4338ca, #4f46e5, #6366f1);
+        box-shadow: 0 6px 16px rgba(79, 70, 229, 0.35);
+        transform: translateY(-2px);
+      }
+
+      #checkEligibilityBtn:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 8px rgba(79, 70, 229, 0.2);
+      }
+
+      #eligibilityResult {
+        background-color: #f9fafb;
+        border-radius: 12px;
+        border: 1px solid #e5e7eb;
+        padding: 16px;
+        margin-top: 20px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      }
+
+      #eligibleResult,
+      #notEligibleResult,
+      #mandatoryResult {
+        background-color: #ffffff;
+        border-radius: 8px;
+        padding: 16px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        transition: transform 0.2s ease;
+      }
+
+      #eligibleResult {
+        border-left: 4px solid #22c55e;
+      }
+
+      #notEligibleResult {
+        border-left: 4px solid #3b82f6;
+      }
+
+      #mandatoryResult {
+        border-left: 4px solid #f97316;
+      }
+
+      #eligibleResult:hover,
+      #notEligibleResult:hover,
+      #mandatoryResult:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Custom select styling */
+      select.w-full {
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 12px center;
+        background-size: 16px 16px;
+        padding-right: 40px;
+      }
+
+      /* State select special styling */
+      #state {
+        background-color: #f0f4ff;
+        border-color: #d1d9ff;
+      }
+
+      #state:focus {
+        background-color: #ffffff;
+        border-color: #818cf8;
+        box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.2);
+      }
+
+      #state option {
+        padding: 8px;
+      }
+
+      #state option[value^="special"] {
+        background-color: #ede9fe;
+        color: #6d28d9;
+        font-weight: 500;
+      }
+
+      #state option[value^="regular"] {
+        background-color: #f0f9ff;
+        color: #0369a1;
+      }
+
+      /* Media queries */
+      @media (min-width: 640px) {
+        .sm\:px-6 {
+          padding-left: 1.5rem;
+          padding-right: 1.5rem;
+        }
+
+        .sm\:text-sm {
+          font-size: 0.875rem;
+          line-height: 1.25rem;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .md\:flex {
+          display: flex;
+        }
+
+        .md\:hidden {
+          display: none;
+        }
+
+        .md\:flex-row {
+          flex-direction: row;
+        }
+
+        .md\:grid-cols-2 {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .md\:grid-cols-3 {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .md\:col-span-2 {
+          grid-column: span 2 / span 2;
+        }
+
+        .md\:py-32 {
+          padding-top: 8rem;
+          padding-bottom: 8rem;
+        }
+
+        .md\:text-5xl {
+          font-size: 3rem;
+          line-height: 1;
+        }
+
+        .md\:text-xl {
+          font-size: 1.25rem;
+          line-height: 1.75rem;
+        }
+
+        .md\:mb-0 {
+          margin-bottom: 0;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .lg\:px-8 {
+          padding-left: 2rem;
+          padding-right: 2rem;
+        }
+
+        .lg\:grid-cols-2 {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      /* Animation for step items */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .step-item {
+        animation: fadeInUp 0.5s ease forwards;
+        opacity: 0;
+      }
+
+      .step-item:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+
+      .step-item:nth-child(3) {
+        animation-delay: 0.2s;
+      }
+
+      .step-item:nth-child(5) {
+        animation-delay: 0.3s;
+      }
+
+      .step-item:nth-child(7) {
+        animation-delay: 0.4s;
+      }
+
+      /* Pulse animation for step icons */
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+        }
+        70% {
+          box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+        }
+      }
+
+      .step-icon-container {
+        animation: pulse 2s infinite;
+      }
+
+      .step-icon-container:nth-child(1) {
+        animation-delay: 0s;
+      }
+
+      .step-icon-container:nth-child(2) {
+        animation-delay: 0.5s;
+      }
+
+      .step-icon-container:nth-child(3) {
+        animation-delay: 1s;
+      }
+
+      .step-icon-container:nth-child(4) {
+        animation-delay: 1.5s;
+      }
+
+      /* Border animation for step guide container */
+      @keyframes borderPulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.2);
+        }
+        70% {
+          box-shadow: 0 0 0 10px rgba(79, 70, 229, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(79, 70, 229, 0);
+        }
+      }
+
+      .step-guide-container {
+        animation: borderPulse 3s infinite;
+      }
+
+      /* GST Registration Online Section */
+      .gst-online-section {
+        background: linear-gradient(to bottom, var(--white), var(--gray-50));
+        padding: 4rem 0;
+        border-bottom: 1px solid var(--gray-200);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .gst-online-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: var(--gradient-primary);
+      }
+
+      .gst-online-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+        color: var(--text-dark);
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background: var(--gradient-secondary);
+        border-radius: 3px;
+      }
+
+      .gst-badge {
+        background: var(--gradient-primary);
+        color: var(--white);
+        padding: 0.5rem 1rem;
+        border-radius: 2rem;
+        font-size: 0.875rem;
+        font-weight: 600;
+        box-shadow: 0 4px 6px rgba(79, 70, 229, 0.2);
+      }
+
+      .features-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-bottom: 2.5rem;
+      }
+
+      .feature-item {
+        display: flex;
+        align-items: flex-start;
+        background-color: var(--white);
+        padding: 1.5rem;
+        border-radius: var(--border-radius);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-left: 4px solid var(--primary-color);
+      }
+
+      .feature-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
+      }
+
+      .feature-icon-wrapper {
+        background: var(--primary-light);
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 1rem;
+        flex-shrink: 0;
+      }
+
+      .feature-icon {
+        color: var(--primary-color);
+        font-size: 1.25rem;
+      }
+
+      .feature-content {
+        flex: 1;
+      }
+
+      .feature-title {
+        font-size: 1.125rem;
+        color: var(--text-dark);
+        margin-bottom: 0.5rem;
+      }
+
+      .feature-item p {
+        font-size: 0.95rem;
+        color: var(--text-medium);
+        line-height: 1.6;
+      }
+
+      .feature-item strong {
+        color: var(--text-dark);
+        font-weight: 600;
+      }
+
+      .strike-through {
+        text-decoration: line-through;
+        color: var(--text-light);
+        margin-right: 0.25rem;
+      }
+
+      .highlight-price {
+        color: var(--secondary-color);
+        font-weight: 700;
+        font-size: 1.1em;
+      }
+
+      .terms-link {
+        color: var(--primary-color);
+        font-size: 0.75rem;
+        margin-left: 0.25rem;
+        text-decoration: underline;
+      }
+
+      .documents-needed {
+        background-color: var(--white);
+        padding: 1.75rem;
+        border-radius: var(--border-radius);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        margin-top: 1.5rem;
+        border: 1px solid var(--gray-200);
+      }
+
+      .document-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.25rem;
+      }
+
+      .document-header-icon-wrapper {
+        background: var(--gradient-primary);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 1rem;
+        flex-shrink: 0;
+      }
+
+      .document-header-icon {
+        color: var(--white);
+        font-size: 1.125rem;
+      }
+
+      .document-header h3 {
+        font-size: 1.25rem;
+        color: var(--text-dark);
+      }
+
+      .document-list-simple {
+        margin-left: 0;
+        margin-bottom: 1.5rem;
+      }
+
+      .document-list-simple li {
+        font-size: 0.95rem;
+        color: var(--text-medium);
+        margin-bottom: 0.75rem;
+        padding: 0.5rem 0.75rem;
+        background-color: var(--gray-50);
+        border-radius: 6px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .document-name {
+        display: flex;
+        align-items: center;
+      }
+
+      .document-name::before {
+        content: "•";
+        color: var(--primary-color);
+        margin-right: 0.75rem;
+        font-size: 1.25rem;
+      }
+
+      .document-tag {
+        background-color: var(--primary-light);
+        color: var(--primary-dark);
+        font-size: 0.75rem;
+        font-weight: 600;
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+      }
+
+      .view-documents-btn {
+        display: inline-flex;
+        align-items: center;
+        color: var(--primary-color);
+        font-size: 0.95rem;
+        font-weight: 600;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem 0;
+        transition: all 0.3s ease;
+      }
+
+      .view-documents-btn i {
+        margin-left: 0.5rem;
+        font-size: 0.75rem;
+        transition: transform 0.3s ease;
+      }
+
+      .view-documents-btn:hover {
+        color: var(--primary-dark);
+      }
+
+      .view-documents-btn:hover i {
+        transform: translateX(3px);
+      }
+
+      .gst-cta {
+        margin-top: 3rem;
+        background: var(--gradient-primary);
+        padding: 2rem;
+        border-radius: var(--border-radius);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        box-shadow: 0 6px 12px rgba(79, 70, 229, 0.2);
+      }
+
+      .gst-cta-content {
+        margin-bottom: 1.5rem;
+      }
+
+      .gst-cta h3 {
+        color: var(--white);
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .gst-cta p {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1rem;
+      }
+
+      /* Modal Styles */
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: 1000;
+        overflow-y: auto;
+        backdrop-filter: blur(4px);
+      }
+
+      .modal-content {
+        background-color: var(--white);
+        margin: 2rem auto;
+        padding: 0;
+        border-radius: 12px;
+        max-width: 800px;
+        position: relative;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        overflow: hidden;
+      }
+
+      .modal-header {
+        background: var(--gradient-primary);
+        padding: 1.5rem 2rem;
+        color: var(--white);
+      }
+
+      .modal-header h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .modal-header p {
+        font-size: 0.95rem;
+        opacity: 0.9;
+      }
+
+      .close-modal {
+        position: absolute;
+        top: 1rem;
+        right: 1.5rem;
+        font-size: 1.75rem;
+        color: var(--white);
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        z-index: 10;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+
+      .close-modal:hover {
+        transform: rotate(90deg);
+        background-color: rgba(255, 255, 255, 0.3);
+      }
+
+      .tabs-container {
+        padding: 0;
+      }
+
+      .tabs {
+        display: flex;
+        border-bottom: 1px solid var(--gray-200);
+        overflow-x: auto;
+        background-color: var(--gray-50);
+      }
+
+      .tab-btn {
+        padding: 1rem 1.5rem;
+        background: none;
+        border: none;
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: var(--text-medium);
+        cursor: pointer;
+        white-space: nowrap;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        position: relative;
+      }
+
+      .tab-icon {
+        margin-right: 0.5rem;
+        font-size: 0.875rem;
+      }
+
+      .tab-btn::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: transparent;
+        transition: all 0.3s ease;
+      }
+
+      .tab-btn.active {
+        color: var(--primary-color);
+        background-color: var(--white);
+      }
+
+      .tab-btn.active::after {
+        background: var(--gradient-primary);
+      }
+
+      .tab-btn:hover:not(.active) {
+        background-color: rgba(0, 0, 0, 0.03);
+      }
+
+      .tab-content {
+        display: none;
+        padding: 2rem;
+      }
+
+      .tab-content.active {
+        display: block;
+        animation: fadeIn 0.3s ease;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .document-list-detailed {
+        margin-left: 0;
+      }
+
+      .document-list-detailed li {
+        font-size: 1rem;
+        color: var(--text-medium);
+        margin-bottom: 1rem;
+        padding: 0.75rem 1rem;
+        background-color: var(--gray-50);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        transition: all 0.3s ease;
+      }
+
+      .document-list-detailed li:hover {
+        background-color: var(--primary-light);
+        transform: translateX(5px);
+      }
+
+      .document-number {
+        background: var(--gradient-primary);
+        color: var(--white);
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.75rem;
+        font-weight: 600;
+        margin-right: 1rem;
+      }
+
+      .director-proof-section {
+        margin-top: 2rem;
+        padding: 2rem;
+        border-top: 1px solid var(--gray-200);
+        background-color: var(--gray-50);
+      }
+
+      .director-proof-section h4 {
+        font-size: 1.125rem;
+        color: var(--text-dark);
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .proof-subtitle {
+        font-size: 0.875rem;
+        color: var(--text-medium);
+        font-weight: normal;
+      }
+
+      .director-proof-columns {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+      }
+
+      .director-proof-column {
+        flex: 1;
+        min-width: 200px;
+      }
+
+      .director-proof-list {
+        margin-left: 0;
+      }
+
+      .director-proof-list li {
+        font-size: 0.95rem;
+        color: var(--text-medium);
+        margin-bottom: 0.75rem;
+        display: flex;
+        align-items: center;
+      }
+
+      .proof-check {
+        color: var(--success-color);
+        margin-right: 0.75rem;
+      }
+
+      .modal-footer {
+        padding: 1.5rem 2rem;
+        border-top: 1px solid var(--gray-200);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .modal-note {
+        font-size: 0.875rem;
+        color: var(--text-medium);
+        display: flex;
+        align-items: center;
+      }
+
+      .modal-note i {
+        color: var(--primary-color);
+        margin-right: 0.5rem;
+      }
+
+      /* Form Container */
+      .form-container {
+        background-color: var(--white);
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow-lg);
+        margin: 2rem 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+
+      .form-container.visible {
+        opacity: 1;
+      }
+
+      .form-header {
+        background-color: var(--primary-color);
+        padding: 1rem 1.5rem;
+        color: var(--white);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .form-header h2 {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .progress-container {
+        display: flex;
+        align-items: center;
+      }
+
+      #step-indicator {
+        font-size: 0.875rem;
+        margin-right: 1rem;
+      }
+
+      .progress-bar {
+        display: flex;
+        gap: 0.25rem;
+      }
+
+      .progress-step {
+        height: 0.5rem;
+        width: 2rem;
+        border-radius: 9999px;
+        background-color: var(--primary-dark);
+        opacity: 0.5;
+      }
+
+      .progress-step.active {
+        opacity: 1;
+        background-color: var(--white);
+      }
+
+      /* Form Styles */
+      #gst-form {
+        padding: 1.5rem;
+      }
+
+      .form-step {
+        display: block;
+      }
+
+      .form-step.hidden {
+        display: none;
+      }
+
+      .form-step h3 {
+        font-size: 1.125rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .form-description {
+        font-size: 0.875rem;
+        color: var(--text-medium);
+        margin-bottom: 1.5rem;
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .form-group {
+        margin-bottom: 1rem;
+      }
+
+      .form-group.full-width {
+        grid-column: 1 / -1;
+      }
+
+      .form-group label {
+        display: block;
+        font-size: 0.875rem;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+        color: var(--text-dark);
+      }
+
+      .input-icon-wrapper {
+        position: relative;
+      }
+
+      .input-icon {
+        position: absolute;
+        left: 0.75rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--text-light);
+      }
+
+      .form-group input,
+      .form-group select {
+        width: 100%;
+        padding: 0.625rem;
+        border: 1px solid var(--gray-300);
+        border-radius: var(--border-radius);
+        font-size: 0.875rem;
+        transition: border-color 0.3s, box-shadow 0.3s;
+      }
+
+      .input-icon-wrapper input,
+      .input-icon-wrapper select {
+        padding-left: 2.5rem;
+      }
+
+      .form-group input:focus,
+      .form-group select:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 3px var(--primary-light);
+      }
+
+      /* Document Section */
+      .document-section {
+        background-color: var(--gray-50);
+        padding: 1rem;
+        border-radius: var(--border-radius);
+        margin: 1.5rem 0;
+      }
+
+      .document-section h4 {
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .document-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .document-list li {
+        display: flex;
+        align-items: flex-start;
+        font-size: 0.875rem;
+        color: var(--text-medium);
+      }
+
+      .document-icon {
+        color: var(--success-color);
+        margin-right: 0.5rem;
+        flex-shrink: 0;
+      }
+
+      .document-note {
+        font-size: 0.75rem;
+        color: var(--text-light);
+        margin-top: 0.75rem;
+      }
+
+      /* Terms Container */
+      .terms-container {
+        display: flex;
+        margin-top: 1.5rem;
+      }
+
+      .checkbox-wrapper {
+        margin-right: 0.75rem;
+        padding-top: 0.25rem;
+      }
+
+      .terms-text {
+        font-size: 0.875rem;
+      }
+
+      .terms-text label {
+        font-weight: 500;
+        color: var(--text-dark);
+        display: block;
+        margin-bottom: 0.25rem;
+      }
+
+      .terms-text p {
+        color: var(--text-medium);
+      }
+
+      /* Form Navigation */
+      .form-navigation {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2rem;
+        padding-top: 1.25rem;
+        border-top: 1px solid var(--gray-200);
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      /* Benefits Section */
+      .benefits-container {
+        background-color: var(--white);
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow-lg);
+        margin: 2rem 0;
+        overflow: hidden;
+      }
+
+      .benefits-header {
+        background-color: var(--primary-color);
+        padding: 1rem 1.5rem;
+        color: var(--white);
+      }
+
+      .benefits-header h2 {
+        font-size: 1.25rem;
+      }
+
+      .benefits-grid {
+        padding: 1.5rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .benefit-item {
+        display: flex;
+        align-items: flex-start;
+      }
+
+      .benefit-icon {
+        color: var(--success-color);
+        font-size: 1.25rem;
+        margin-right: 0.75rem;
+        flex-shrink: 0;
+      }
+
+      .benefit-item h3 {
+        font-size: 1rem;
+        margin-bottom: 0.25rem;
+      }
+
+      .benefit-item p {
+        font-size: 0.875rem;
+        color: var(--text-medium);
+      }
+
+      /* Footer */
+      .footer {
+        background-color: var(--gray-800);
+        color: var(--white);
+        padding: 2rem 0 0;
+        margin-top: 3rem;
+      }
+
+      .footer-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .footer-section h3 {
+        font-size: 1.125rem;
+        margin-bottom: 1rem;
+      }
+
+      .footer-section p {
+        font-size: 0.875rem;
+        color: var(--gray-300);
+      }
+
+      .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .footer-links a {
+        font-size: 0.875rem;
+        color: var(--gray-300);
+        transition: color 0.3s ease;
+      }
+
+      .footer-links a:hover {
+        color: var(--white);
+      }
+
+      .contact-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .contact-list li {
+        display: flex;
+        align-items: center;
+        font-size: 0.875rem;
+        color: var(--gray-300);
+      }
+
+      .contact-icon {
+        margin-right: 0.5rem;
+        font-size: 0.75rem;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding: 1.5rem 0;
+        margin-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 0.875rem;
+        color: var(--gray-400);
+      }
+
+      /* Responsive Styles */
+      @media (min-width: 640px) {
+        .hero h1 {
+          font-size: 3rem;
+        }
+
+        .hero p {
+          font-size: 1.25rem;
+        }
+
+        .form-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .benefits-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .features-list {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .gst-cta {
+          flex-direction: row;
+          justify-content: space-between;
+          text-align: left;
+          padding: 2.5rem;
+        }
+
+        .gst-cta-content {
+          margin-bottom: 0;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .nav {
+          display: flex;
+        }
+
+        .hero {
+          padding: 6rem 0;
+        }
+
+        .footer-container {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .hero {
+          padding: 8rem 0;
+        }
+
+        .hero-content {
+          padding: 0;
+        }
+
+        .features-list {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      /* Sticky Navigation */
+      .sticky-nav {
+        position: sticky;
+        top: 0;
+        background-color: #f0f7ff;
+        border-bottom: 1px solid #e5e7eb;
+        z-index: 50;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 1.9rem;
+        overflow-x: auto;
+        padding: 0.5rem 0;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      .nav-links::-webkit-scrollbar {
+        display: none;
+      }
+
+      .nav-link {
+        padding: 1rem 0.25rem;
+        border: none;
+        background: none;
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: #6b7280;
+        border-bottom: 2px solid transparent;
+        cursor: pointer;
+        white-space: nowrap;
+        transition: all 0.2s;
+      }
+
+      .nav-link:hover {
+        color: #4b5563;
+        border-bottom-color: #d1d5db;
+      }
+
+      .nav-link.active {
+        color: #3b82f6;
+        border-bottom-color: #3b82f6;
+      }
+
+      /* Content Sections */
+      .content-section {
+        padding: 4rem 0;
+      }
+
+      .content-section h2 {
+        font-size: 1.875rem;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+        color: #1a1a1a;
+      }
+
+      .content-section p {
+        color: #4b5563;
+        margin-bottom: 1rem;
+      }
+
+      .content-section ul {
+        list-style-type: disc;
+        padding-left: 1.5rem;
+        color: #4b5563;
+      }
+
+      .content-section li {
+        margin-bottom: 0.5rem;
+      }
+
+      /* Document Groups */
+      .document-groups {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .document-group h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+
+      /* Benefits Grid */
+      .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      /* Process Steps */
+      .process-steps {
+        background-color: #f9fafb;
+        padding: 2rem;
+        border-radius: 0.5rem;
+      }
+
+      .process-steps ol {
+        list-style-type: decimal;
+        padding-left: 1.5rem;
+      }
+
+      .process-steps li {
+        margin-bottom: 1.5rem;
+      }
+
+      /* Why Cards */
+      .why-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+      }
+
+      .why-card {
+        background-color: #f0f7ff;
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+      }
+
+      .why-card h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+
+      /* FAQs */
+      .faq-list {
+        display: grid;
+        gap: 1.5rem;
+      }
+
+      .faq-item {
+        background-color: #f9fafb;
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+      }
+
+      .faq-item h3 {
+        font-size: 1.125rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+    </style>
+    <script>
+      window.addEventListener("scroll", function () {
+        let navbar = document.querySelector("#navbar_top");
+        if (window.scrollY > 50) {
+          // Adjust 50px as needed
+          navbar.classList.add("sticky");
+        } else {
+          navbar.classList.remove("sticky");
+        }
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // Smooth scrolling for navigation
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        navLinks.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const sectionId = this.getAttribute("data-section");
+            const section = document.getElementById(sectionId);
+
+            if (section) {
+              const navHeight =
+                document.querySelector(".sticky-nav").offsetHeight;
+              const sectionTop = section.offsetTop - navHeight;
+
+              window.scrollTo({
+                top: sectionTop,
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+
+        // Active section highlighting
+        const sections = document.querySelectorAll(".content-section");
+        const navHeight = document.querySelector(".sticky-nav").offsetHeight;
+
+        function setActiveSection() {
+          const scrollPosition = window.scrollY + navHeight + 100;
+
+          sections.forEach((section) => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute("id");
+
+            if (
+              scrollPosition >= sectionTop &&
+              scrollPosition < sectionTop + sectionHeight
+            ) {
+              navLinks.forEach((link) => {
+                link.classList.remove("active");
+                if (link.getAttribute("data-section") === sectionId) {
+                  link.classList.add("active");
+                }
+              });
+            }
+          });
+        }
+
+        // Update active section on scroll
+        window.addEventListener("scroll", setActiveSection);
+
+        // Set initial active section
+        setActiveSection();
+
+        // Form navigation variables
+        const form = document.getElementById("gst-form");
+        const formContainer = document.getElementById("registration-form");
+        const steps = document.querySelectorAll(".form-step");
+        const progressSteps = document.querySelectorAll(".progress-step");
+        const stepIndicator = document.getElementById("step-indicator");
+        const prevBtn = document.getElementById("prev-btn");
+        const nextBtn = document.getElementById("next-btn");
+        const submitBtn = document.getElementById("submit-btn");
+
+        // GST Registration button
+        const gstRegistrationBtn =
+          document.getElementById("gstRegistrationBtn");
+        const gstCtaBtn = document.getElementById("gst-cta-btn");
+
+        // Document modal variables
+        const viewAllDocumentsBtn =
+          document.getElementById("view-all-documents");
+        const documentModal = document.getElementById("document-modal");
+        const closeModalBtn = document.querySelector(".close-modal");
+        const closeModalBtnFooter = document.getElementById("close-modal-btn");
+        const tabBtns = document.querySelectorAll(".tab-btn");
+        const tabContents = document.querySelectorAll(".tab-content");
+
+        // Current step
+        let currentStep = 1;
+
+        // Form data object
+        const formData = {
+          businessName: "",
+          businessType: "",
+          pan: "",
+          email: "",
+          phone: "",
+          address: "",
+          city: "",
+          state: "",
+          pincode: "",
+          incorporationDate: "",
+          turnover: "",
+          agreeTerms: false,
+        };
+
+        // Show form when GST Registration button is clicked
+        gstRegistrationBtn.addEventListener("click", function () {
+          formContainer.classList.add("visible");
+          setTimeout(() => {
+            formContainer.scrollIntoView({ behavior: "smooth" });
+          }, 100);
+        });
+
+        // Show form when CTA button is clicked
+        if (gstCtaBtn) {
+          gstCtaBtn.addEventListener("click", function () {
+            formContainer.classList.add("visible");
+            setTimeout(() => {
+              formContainer.scrollIntoView({ behavior: "smooth" });
+            }, 100);
+          });
+        }
+
+        // Open document modal
+        viewAllDocumentsBtn.addEventListener("click", function (e) {
+          e.preventDefault();
+          documentModal.style.display = "block";
+          document.body.style.overflow = "hidden"; // Prevent scrolling when modal is open
+        });
+
+        // Close document modal
+        closeModalBtn.addEventListener("click", function () {
+          documentModal.style.display = "none";
+          document.body.style.overflow = "auto"; // Re-enable scrolling
+        });
+
+        // Close modal with footer button
+        if (closeModalBtnFooter) {
+          closeModalBtnFooter.addEventListener("click", function () {
+            documentModal.style.display = "none";
+            document.body.style.overflow = "auto";
+          });
+        }
+
+        // Close modal when clicking outside
+        window.addEventListener("click", function (event) {
+          if (event.target === documentModal) {
+            documentModal.style.display = "none";
+            document.body.style.overflow = "auto";
+          }
+        });
+
+        // Tab functionality
+        tabBtns.forEach((btn) => {
+          btn.addEventListener("click", function () {
+            // Remove active class from all buttons and contents
+            tabBtns.forEach((b) => b.classList.remove("active"));
+            tabContents.forEach((c) => c.classList.remove("active"));
+
+            // Add active class to clicked button
+            this.classList.add("active");
+
+            // Show corresponding content
+            const tabId = this.getAttribute("data-tab");
+            document.getElementById(`${tabId}-tab`).classList.add("active");
+          });
+        });
+
+        // Update UI based on current step
+        function updateUI() {
+          // Hide all steps
+          steps.forEach((step) => step.classList.add("hidden"));
+
+          // Show current step
+          document
+            .getElementById(`step-${currentStep}`)
+            .classList.remove("hidden");
+
+          // Update progress indicator
+          stepIndicator.textContent = `Step ${currentStep} of 3`;
+
+          // Update progress steps
+          progressSteps.forEach((step, index) => {
+            if (index + 1 <= currentStep) {
+              step.classList.add("active");
+            } else {
+              step.classList.remove("active");
+            }
+          });
+
+          // Update buttons
+          if (currentStep === 1) {
+            prevBtn.classList.add("hidden");
+          } else {
+            prevBtn.classList.remove("hidden");
+          }
+
+          if (currentStep === 3) {
+            nextBtn.classList.add("hidden");
+            submitBtn.classList.remove("hidden");
+          } else {
+            nextBtn.classList.remove("hidden");
+            submitBtn.classList.add("hidden");
+          }
+        }
+
+        // Go to next step
+        function nextStep() {
+          // Validate current step
+          if (!validateStep(currentStep)) {
+            return;
+          }
+
+          // Save form data
+          saveFormData(currentStep);
+
+          // Increment step if not at the end
+          if (currentStep < 3) {
+            currentStep++;
+            updateUI();
+            window.scrollTo(0, formContainer.offsetTop);
+          }
+        }
+
+        // Go to previous step
+        function prevStep() {
+          if (currentStep > 1) {
+            currentStep--;
+            updateUI();
+            window.scrollTo(0, formContainer.offsetTop);
+          }
+        }
+
+        // Validate current step
+        function validateStep(step) {
+          let isValid = true;
+          const currentStepElement = document.getElementById(`step-${step}`);
+
+          // Get all required inputs in current step
+          const requiredInputs =
+            currentStepElement.querySelectorAll("[required]");
+
+          requiredInputs.forEach((input) => {
+            if (!input.value) {
+              isValid = false;
+              input.classList.add("error");
+
+              // Add error class
+              input.style.borderColor = "red";
+
+              // Remove error class on input
+              input.addEventListener(
+                "input",
+                function () {
+                  this.style.borderColor = "";
+                },
+                { once: true }
+              );
+            }
+          });
+
+          if (!isValid) {
+            alert("Please fill in all required fields.");
+          }
+
+          return isValid;
+        }
+
+        // Save form data from current step
+        function saveFormData(step) {
+          const currentStepElement = document.getElementById(`step-${step}`);
+          const inputs = currentStepElement.querySelectorAll("input, select");
+
+          inputs.forEach((input) => {
+            if (input.type === "checkbox") {
+              formData[input.name] = input.checked;
+            } else {
+              formData[input.name] = input.value;
+            }
+          });
+        }
+
+        // Handle form submission
+        function handleSubmit(e) {
+          e.preventDefault();
+
+          // Validate final step
+          if (!validateStep(currentStep)) {
+            return;
+          }
+
+          // Save form data
+          saveFormData(currentStep);
+
+          // In a real application, you would submit the form data to a server here
+          console.log("Form data submitted:", formData);
+
+          // Show success message
+          alert("GST Registration application submitted successfully!");
+
+          // Reset form
+          form.reset();
+          currentStep = 1;
+          updateUI();
+        }
+
+        // Add animation to feature items
+        const featureItems = document.querySelectorAll(".feature-item");
+        if (featureItems.length > 0) {
+          featureItems.forEach((item, index) => {
+            item.style.opacity = "0";
+            item.style.transform = "translateY(20px)";
+            item.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+
+            setTimeout(() => {
+              item.style.opacity = "1";
+              item.style.transform = "translateY(0)";
+            }, 100 + index * 150);
+          });
+        }
+
+        // Event listeners
+        nextBtn.addEventListener("click", nextStep);
+        prevBtn.addEventListener("click", prevStep);
+        form.addEventListener("submit", handleSubmit);
+
+        // Initialize UI
+        updateUI();
+
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // GST Eligibility Checker
+        const checkEligibilityBtn = document.getElementById(
+          "checkEligibilityBtn"
+        );
+        const eligibilityResult = document.getElementById("eligibilityResult");
+        const eligibleResult = document.getElementById("eligibleResult");
+        const notEligibleResult = document.getElementById("notEligibleResult");
+        const mandatoryResult = document.getElementById("mandatoryResult");
+
+        checkEligibilityBtn.addEventListener("click", function () {
+          const businessType = document.getElementById("businessType").value;
+          const annualTurnover =
+            document.getElementById("annualTurnover").value;
+          const state = document.getElementById("state").value;
+
+          // Validate inputs
+          if (!businessType || !annualTurnover || !state) {
+            alert("Please fill in all fields to check eligibility.");
+            return;
+          }
+
+          // Hide all result divs
+          eligibleResult.classList.add("hidden");
+          notEligibleResult.classList.add("hidden");
+          mandatoryResult.classList.add("hidden");
+
+          // Check eligibility based on inputs
+          let isEligible = false;
+          let isMandatory = false;
+
+          // E-commerce sellers and interstate businesses always need GST
+          if (businessType === "ecommerce" || businessType === "interstate") {
+            isMandatory = true;
+          }
+          // For special category states, threshold is 10L
+          else if (state.startsWith("special-")) {
+            if (annualTurnover === "below10L") {
+              isEligible = false;
+            } else {
+              isEligible = true;
+            }
+          }
+          // For regular states, threshold is 20L
+          else if (state.startsWith("regular-")) {
+            if (annualTurnover === "below10L" || annualTurnover === "10L-20L") {
+              isEligible = false;
+            } else {
+              isEligible = true;
+            }
+          }
+
+          // Show appropriate result
+          eligibilityResult.classList.remove("hidden");
+
+          if (isMandatory) {
+            mandatoryResult.classList.remove("hidden");
+          } else if (isEligible) {
+            eligibleResult.classList.remove("hidden");
+          } else {
+            notEligibleResult.classList.remove("hidden");
+          }
+
+          // Scroll to result
+          setTimeout(() => {
+            eligibilityResult.scrollIntoView({
+              behavior: "smooth",
+              block: "nearest",
+            });
+          }, 100);
+        });
+      });
+    </script>
+    <script src="script.js"></script>
+    <script
+      data-cfasync="false"
+      src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
+    ></script>
+    <!-- /Footer -->
+  </body>
+</html>
+<link
+  href="https://fonts.googleapis.com/css2?family=Rubik:wght@100;200;300;400;500;600;700;800&display=swap"
+  rel="stylesheet"
+/>
+<!-- Fancy Dropdown JS -->
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-v4-rtl/4.4.1-1/js/bootstrap.min.js"
+  integrity="sha512-gaMoFu7uCFiLfgiU0MXZc/qreuG03Hg/EqRflGara7tlcl3GepIKYY7NjKL/3PwlsR3KacYt0Yi09P1I2/aiJg=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+<script src="https://udyogsuvidhakendra.in/dist/js/dropdown-bootstrap-extended.js"></script>
+<script src="https://udyogsuvidhakendra.in/vendors/jquery/dist/jquery.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.2.0/css/ionicons.min.css"
+  integrity="sha512-XDja4kIuNYHENb7RaJqNuQmjCPGeqUASpevjGoTk0Aj0UHooqsexMUuPmR+zuis5w2pIz5T6FoOOhYAMgQXa6w=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+<link
+  rel="stylesheet"
+  href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css"
+/>
+<script src="https://use.fortawesome.com/1ce05b4b.js"></script>
