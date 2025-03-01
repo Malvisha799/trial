@@ -3245,7 +3245,7 @@ iframe {
 .footer-logo {
   position: absolute;
   left: 48%;
-  top: 48%;
+  top: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
 }
@@ -3381,7 +3381,7 @@ select {
 /* Disclaimer section */
 .disclaimer-section {
   border-top: 1px solid #374151;
-  padding: 2rem;
+  padding: 1.2rem 1rem 1rem 1rem;
   /* margin: 2rem; */
   background: #27282C;
 }
@@ -3407,11 +3407,15 @@ select {
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   margin-bottom: 1rem;
+  font-size: 0.875rem;
 }
 
 .disclaimer-title {
   font-weight: 600;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.2rem;
+}
+.disclaimer-box p{
+  margin-bottom: 0.2rem;
 }
 
 /* Bottom bar */
