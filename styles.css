@@ -313,7 +313,7 @@ body {
   text-decoration: underline;
 }
 
-/* Digital button and toggle container */
+
 /* Digital button and toggle container */
 .digital-container {
   display: flex;
@@ -835,7 +835,7 @@ button:hover .star-6 {
   color: white;
   padding: 4rem 0 0 0;
   text-align: center;
-  background: #001229;
+  /* background:no-repeat; */
 }
 
 .hero h1 {
@@ -2463,7 +2463,7 @@ iframe {
 .services-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0.5rem;
+  gap: 1rem;
   max-width: 1000px;
   margin: 0 auto;
 }
@@ -3245,7 +3245,7 @@ iframe {
 .footer-logo {
   position: absolute;
   left: 48%;
-  top: 52%;
+  top: 58%;
   transform: translate(-50%, -50%);
   text-align: center;
 }
@@ -3379,18 +3379,18 @@ select {
   background: #00bb00;
 }
 /* Disclaimer section */
-.disclaimer-section {
+/* .disclaimer-section {
   border-top: 1px solid #374151;
   padding: 1.2rem 1rem 1rem 1rem;
-  /* margin: 2rem; */
+  margin: 2rem;
   background: #27282C;
-}
+} */
 
 .terms {
   font-size: 0.875rem;
   /* margin-bottom: 1rem; */
-  padding: 0 5rem;
-  text-align: center;
+  padding: 0.1rem 1rem;
+  text-align: justify;
 }
 
 .terms a {
@@ -3404,9 +3404,9 @@ select {
 
 .disclaimer-box {
   /* background-color: black; */
-  padding: 0.5rem 1rem;
+  padding: 0.1rem 1rem 0 1rem;
   border-radius: 0.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.2rem;
   font-size: 0.875rem;
 }
 
