@@ -1014,7 +1014,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Auto-scroll for logos (Left & Right)
   const logosScroll = document.querySelector(".logos-scroll");
   let scrollPosition = 0;
-  let scrollDirection = -1; // 1 = Right, -1 = Left
+  let scrollDirection = 1; // 1 = Right, -1 = Left
   const scrollSpeed = 0.5;
   let isHovered = false;
   let lastTimestamp = 0;
@@ -1036,9 +1036,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Reverse direction at edges
       if (scrollPosition >= logosScroll.scrollWidth - logosScroll.clientWidth) {
-        scrollDirection = -1; // Move Left
-      } else if (scrollPosition <= 0) {
-        scrollDirection = 1; // Move Right
+        scrollDirection = 0; // Reset to start for smooth left-to-right loop
       }
 
       logosScroll.scrollLeft = scrollPosition;
@@ -1325,7 +1323,6 @@ document.addEventListener("DOMContentLoaded", function () {
     );
   });
 });
-
 
 // Handle Explore plan button clicks functionality
 document.addEventListener("DOMContentLoaded", function () {
